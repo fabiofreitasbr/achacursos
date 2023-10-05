@@ -1,0 +1,14 @@
+{
+    "rewrites": [
+      {
+        "source": "/:path*",
+        "has": [
+          {
+            "type": "host",
+            "value": "links.fabiofreitas.com.br"
+          }
+        ],
+        "destination": "/links/:path*"
+      }
+    ]
+  }
