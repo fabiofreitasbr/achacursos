@@ -34,7 +34,7 @@ const Menu = () => {
             <header className="w-full bg-gray-100 text-red-700 border-b-blue-500 border-b-2 md:border-none py-2">
                 <div className="container mx-auto px-4 flex items-center justify-between">
                     <div className="flex md:w-3/12 justify-start items-center">
-                        <a href="">
+                        <a href="/">
                             <img src="img/logo.png" className="w-48 md:w-full" alt="" />
                         </a>
                     </div>
@@ -203,7 +203,7 @@ const Menu = () => {
                         <ul className=" z-10 top-menu flex justify-between items-center text-sm lg:text-lg" id="top-menu"
                             data-depth="0">
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <a className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="" data-depth="0">
+                                <a className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/" data-depth="0">
                                     Home
                                 </a>
                             </li>

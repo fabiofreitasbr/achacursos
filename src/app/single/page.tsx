@@ -53,7 +53,7 @@ export default function Page() {
                             </div>
                             <div className="py-4 text-base text-gray-500">
                                 <h3 className="text-blue-500 my-2 text-2xl md:text-2xl font-open">Vídeo</h3>
-                                <iframe className="w-full aspect-video rounded-xl md:rounded-2xl lazyloaded" src="https://www.youtube.com/embed/9IlEiBVG3Vw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe className="w-full aspect-video rounded-xl md:rounded-2xl lazyloaded" src="https://www.youtube.com/embed/9IlEiBVG3Vw" title="YouTube video player" frameborder="0"></iframe>
                             </div>
                         </div>
                         <div className="w-full md:w-1/3">
