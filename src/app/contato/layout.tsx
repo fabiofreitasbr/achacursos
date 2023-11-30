@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 
-
 import Menu from '../Parts/Menu'
 import Footer from '../Parts/Footer';
 import FooterCopyright from '../Parts/FooterCopyright';

@@ -1,12 +1,11 @@
 
 
-const FooterCopyright = () => {
+function FooterCopyright () {
     return (
-
-        <div className="bg-black">
+        <div className="bg-red-800">
             <div className="container mx-auto px-4">
-                <div className="text-center text-white uppercase py-3 text-xs md:text-sm5">
-                    Fábio Freitas - Todos os direitos Reservados
+                <div className="text-center text-white py-3 text-sm md:text-base uppercase">
+                    Acha Cursos - Todos os direitos Reservados
                 </div>
             </div>
         </div>

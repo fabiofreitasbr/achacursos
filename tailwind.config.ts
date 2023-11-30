@@ -9,28 +9,36 @@ const config: Config = {
   
   theme: {
     colors: {
-      black: '#050505',
-      blue: {
-        500: '#0085FF',
-        700: '#0065DF',
-      },
-      gray: {
-        100: '#efefef', // Mesmo que white
-        200: '#e1e1e1',
-        300: '#b5b5b5', // Mesmo que white
-        400: '#939393',
-        500: '#7c7c7c', // Mesmo que white
-        600: '#5e5e5e',
-        700: '#424242', // Mesmo que white
-        800: '#282828',
-        900: '#141414',
-      },
-      white: 'white',
-      transparent: 'transparent',
+        'blue': {
+            '500': '#0073c0',
+            '600': '#02558D',
+        },
+        'red': {
+            '100': 'red',
+            '500': '#de2e2e',
+            '700': '#de2e2e',
+            '800': '#B42727',
+        },
+        'gray': {
+            '100': '#f3f4f6',
+            '200': '#e3e4e6',
+            '300': '#cdcdcd',
+            '400': '#ababab',
+            '500': '#757575',
+        },
+        'black': '#232323',
+        'white': 'white',
+        'transparent': 'transparent',
     },
     fontFamily: {
       brandon: 'brandon-grotesque',
       opensans: 'Open Sans',
+      body: ["brandon-grotesque"],
+      sans: ["brandon-grotesque"],
+      serif: ["brandon-grotesque"],
+      mono: ["brandon-grotesque"],
+      display: ["brandon-grotesque"],
+      reading: ["Open Sans"],
     }
   },
   plugins: [],
