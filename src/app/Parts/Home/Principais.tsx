@@ -1,3 +1,5 @@
+import ProductHighlight from "@/app/Components/ProductHighlight"
+
 function Principais() {
     return (
         <section className="my-8" id="destaque-principais">
@@ -20,24 +22,9 @@ function Principais() {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div className="bg-black bg-cover bg-center h-80 flex items-end" style={{ backgroundImage: "url(img/product-1.jpg);" }}>
-                        <div className=" text-white px-4 py-3 font-bold text-xl">
-                            <h4>Desenvolvimento Web - RJ</h4>
-                            <h5>R$ 150,00 - mensal</h5>
-                        </div>
-                    </div>
-                    <div className="bg-black bg-cover bg-center h-80 flex items-end" style={{ backgroundImage: "url(img/product-2.jpg);" }}>
-                        <div className=" text-white px-4 py-3 font-bold text-xl">
-                            <h4>Desenvolvimento Web - RJ</h4>
-                            <h5>R$ 150,00 - mensal</h5>
-                        </div>
-                    </div>
-                    <div className="bg-black bg-cover bg-center h-80 flex items-end" style={{ backgroundImage: "url(img/product-3.jpg);" }}>
-                        <div className=" text-white px-4 py-3 font-bold text-xl">
-                            <h4>Desenvolvimento Web - RJ</h4>
-                            <h5>R$ 150,00 - mensal</h5>
-                        </div>
-                    </div>
+                    <ProductHighlight />
+                    <ProductHighlight />
+                    <ProductHighlight />
                 </div>
                 <div className="w-full">
                     <a href="">
