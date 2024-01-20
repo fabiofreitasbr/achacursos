@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import React from 'react';
 import ProductRecents from '../Components/ProdutectRecents';
+import ProductList from '../Components/ProductList';
 
 export default function Page() {
     return (
@@ -31,7 +32,6 @@ export default function Page() {
                                     </h3>
                                     <ProductRecents />
                                     <ProductRecents />
-                                    <ProductRecents />
                                 </div>
                                 <div className="mb-2 md:mb-10">
                                     <h3 className="text-xl my-2 font-medium text-blue-500 uppercase">
@@ -54,81 +54,14 @@ export default function Page() {
                                                 </span>
                                             </a>
                                         </div>
-                                        <div>
-                                            <a href="https://www.redeconomia.com.br/dicas-receitas/datas-comemorativas/">
-                                                <span
-                                                    className="inline-block my-1 mx-1 md:mx-0 md:my-2 py-2 px-2 md:px-4 text-xs md:text-lg text-blue-500 font-bold uppercase border md:border-2 border-blue-500">
-                                                    Datas Comemorativas
-                                                </span>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="https://www.redeconomia.com.br/dicas-receitas/dicas-truques/">
-                                                <span
-                                                    className="inline-block my-1 mx-1 md:mx-0 md:my-2 py-2 px-2 md:px-4 text-xs md:text-lg text-blue-500 font-bold uppercase border md:border-2 border-blue-500">
-                                                    Dicas &amp; Truques
-                                                </span>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="https://www.redeconomia.com.br/dicas-receitas/em-casa-com-a-redeconomia/">
-                                                <span
-                                                    className="inline-block my-1 mx-1 md:mx-0 md:my-2 py-2 px-2 md:px-4 text-xs md:text-lg text-blue-500 font-bold uppercase border md:border-2 border-blue-500">
-                                                    Em casa com a redeconomia
-                                                </span>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="https://www.redeconomia.com.br/dicas-receitas/lanches-rapidos/">
-                                                <span
-                                                    className="inline-block my-1 mx-1 md:mx-0 md:my-2 py-2 px-2 md:px-4 text-xs md:text-lg text-blue-500 font-bold uppercase border md:border-2 border-blue-500">
-                                                    Lanches Rápidos
-                                                </span>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="https://www.redeconomia.com.br/dicas-receitas/redeconomia-na-cozinha/">
-                                                <span
-                                                    className="inline-block my-1 mx-1 md:mx-0 md:my-2 py-2 px-2 md:px-4 text-xs md:text-lg text-blue-500 font-bold uppercase border md:border-2 border-blue-500">
-                                                    Redeconomia na Cozinha
-                                                </span>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="https://www.redeconomia.com.br/dicas-receitas/sobremesas/">
-                                                <span
-                                                    className="inline-block my-1 mx-1 md:mx-0 md:my-2 py-2 px-2 md:px-4 text-xs md:text-lg text-blue-500 font-bold uppercase border md:border-2 border-blue-500">
-                                                    Sobremesas
-                                                </span>
-                                            </a>
-                                        </div>
                                     </div>
                                 </div>
                             </aside>
                         </div>
                         <div className="w-full md:w-2/3 lg:w-3/4">
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
-
-                                <div className="px-2 py-2">
-                                    <a href="/single" className="h-full">
-                                        <div className="rounded-xl h-full overflow-hidden shadow-lg shadow-gray-300">
-                                            <div className="bg-blue-500 h-80 bg-cover bg-center" style={{backgroundImage: "url(../img/product-1.jpg);"}}></div>
-                                            <div className="px-6 py-4 flex justify-between">
-                                                <div className="uppercase text-black">
-                                                    <div className="pb-4">
-                                                        <h4 className="text-sm text-orange">Estácio de Sá</h4>
-                                                        <h3 className="text-lg text-blue-500 font-medium">Desenvolvimento Web</h3>
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="text-sm text-orange"><strong className="text-red-700">EAD</strong> - Rio de Janeiro - RJ</h4>
-                                                        <h3 className="text-lg text-blue-500 font-medium">R$ 150,00 <small className="text-xs text-gray-500">Mensal</small></h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-
+                                <ProductList />
+                                <ProductList />
                             </div>
                             <div className="mx-auto block text-center my-8">
                                 <ul className="inline-flex -space-x-px">

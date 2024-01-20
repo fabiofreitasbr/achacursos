@@ -8,8 +8,8 @@ export default function Page() {
                 <div className="container mx-auto px-4">
                     <div className="md:flex justify-between">
                         <div>
-                            <p className="text-lg font-medium text-gray-500">Estácio de Sá - Maricá/RJ</p>
                             <h1 className="mt-1 text-3xl font-semibold font-reading text-blue-500">Desenvolvimento Web</h1>
+                            <p className="text-lg font-medium text-gray-500">Estácio de Sá - Maricá/RJ</p>
                             <dl className="my-4 text-xs font-medium flex items-center">
                                 <dt className="sr-only">Location</dt>
                                 <dd className="flex items-center">
@@ -29,7 +29,7 @@ export default function Page() {
                         </div>
                         <div className="text-left md:text-right flex md:block items-center my-2">
                             <p className="text-sm uppercase font-medium text-gray-500">Está com dúvida?</p>
-                            <button type="button" className="bg-blue-500 hover:bg-blue-600 text-gray-100 font-medium rounded-full my-2 py-2 px-4 block text-sm mx-auto uppercase">Fale Conosco</button>
+                            <a href="/contato"><button type="button" className="bg-blue-500 hover:bg-blue-600 text-gray-100 font-medium rounded-full my-2 py-2 px-4 block text-sm mx-auto uppercase">Fale Conosco</button></a>
                         </div>
                     </div>
                     <div className="flex flex-wrap">
@@ -53,7 +53,7 @@ export default function Page() {
                             </div>
                             <div className="py-4 text-base text-gray-500">
                                 <h3 className="text-blue-500 my-2 text-2xl md:text-2xl font-open">Vídeo</h3>
-                                <iframe className="w-full aspect-video rounded-xl md:rounded-2xl lazyloaded" src="https://www.youtube.com/embed/9IlEiBVG3Vw" title="YouTube video player"></iframe>
+                                <iframe className="w-full aspect-video rounded-xl md:rounded-2xl lazyloaded" src="https://www.youtube.com/embed/_X17kCIpZQY" title="YouTube video player"></iframe>
                             </div>
                         </div>
                         <div className="w-full md:w-1/3">
@@ -66,17 +66,9 @@ export default function Page() {
                                                 <h3 className="text-2xl text-blue-500 font-medium uppercase">R$ 1.365.000,00</h3>
                                                 <p className="text-sm my-1 text-blue-500 ">R$ 2.031/m²</p>
                                             </div>
-                                            <div className="py-3">
-                                                <h4 className="text-sm text-gray-400">Condomínio</h4>
-                                                <h3 className="text-lg text-gray-400 font-medium">R$ 390/mês</h3>
-                                            </div>
-                                            <div className="py-3">
-                                                <h4 className="text-sm text-gray-400">IPTU</h4>
-                                                <h3 className="text-lg text-gray-400 font-medium">R$ 919,78/mês</h3>
-                                            </div>
                                         </div>
-                                        <button type="button" className="bg-red-700 hover:bg-red-800 text-gray-100 font-medium rounded-full my-4 py-2 px-4 block text-lg mx-auto uppercase w-4/5">Eu quero</button>
-                                        <button type="button" className="bg-blue-500 hover:bg-blue-600 text-gray-100 font-medium rounded-full my-4 py-2 px-4 block text-lg mx-auto uppercase w-4/5">mais informações</button>
+                                        <button type="button" className="bg-red-700 hover:bg-red-800 text-gray-100 font-medium rounded-full my-4 py-2 px-4 block text-lg mx-auto uppercase w-4/5">Conhecer o Curso</button>
+                                        <button type="button" className="bg-blue-500 hover:bg-blue-600 text-gray-100 font-medium rounded-full my-4 py-2 px-4 block text-lg mx-auto uppercase w-4/5">Comprar</button>
                                     </div>
                                 </div>
                             </div>

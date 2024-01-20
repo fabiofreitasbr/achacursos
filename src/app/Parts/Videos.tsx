@@ -153,7 +153,7 @@ const Videos = () => {
             "video": "rVzUiZ8yN-A",
         },
         {
-            "title": "Minha Vez - Ton Carfi (Cover Fábio Freitas)",
+            "title": "Minha Vez - Ton Carfi (Cover Acha Cursos)",
             "video": "3eQLu7IS710",
         },
     ];

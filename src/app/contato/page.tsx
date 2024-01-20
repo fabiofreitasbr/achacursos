@@ -1,12 +1,48 @@
+'use client'
 import Image from 'next/image'
-import React from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCode, faMusic, faBullhorn, faCamera } from '@fortawesome/free-solid-svg-icons'
-import { faSquareFacebook, faInstagram, faYoutube, faTiktok, faBehance, faTwitter } from '@fortawesome/free-brands-svg-icons';
-
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import axios from 'axios';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 
 export default function Page() {
+    const [responseMessage, setResponseMessage] = useState('');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [mobile, setMobile] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
+    const [colorMessage, setColorMessage] = useState('bg-red-700');
+
+    const handleName = (e: ChangeEvent<HTMLInputElement>) => { setName(e.target.value); }; 
+    const handleEmail = (e: ChangeEvent<HTMLInputElement>) => { setEmail(e.target.value); };
+    const handlePhone = (e: ChangeEvent<HTMLInputElement>) => { setPhone(e.target.value); }; 
+    const handleMobile = (e: ChangeEvent<HTMLInputElement>) => { setMobile(e.target.value); };
+
+    function onSubmitSend(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+
+        if (name == null || name.length < 3) { setResponseMessage('O nome digitado não é válido'); }
+        else if (email == null || email.length < 5) { setResponseMessage('O e-mail digitado não é válido'); }
+        else if (!email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) { setResponseMessage('O e-mail digitado não é válido'); }
+        else {
+            setResponseMessage('');
+            axios.post('https://infoback.infocomputec.com.br/aviseme', {
+                nome: name,
+                email: email,
+                phone: phone,
+                mobile: mobile,
+            })
+            .then(function (response) {
+                setResponseMessage(response.data.message);
+                if (response.data.status == true) { setColorMessage('bg-green-700'); } else { setColorMessage('bg-red-700'); }
+            })
+            .catch(function (error) { setResponseMessage("HOUVE UM ERRO AO ENVIAR A MENSAGEM"); });
+        }
+    }
   return (
     <main>
         <section className="py-8">
@@ -16,13 +52,13 @@ export default function Page() {
             <h4 className="font-reading text-lg mb-4">Enviaremos mensagem via whatsapp</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4">
                 <div>
-                    <form action="" method="post" id="form-contact">
+                    <form onSubmit={onSubmitSend} id="form-contact">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <input type="text" name="name" id="name" className="w-full py-3 px-4 rounded-lg text-lg font-medium border text-gray-500 md:col-span-2" placeholder="NOME" />
-                            <input type="text" name="mobile" id="mobile" className="w-full py-3 px-4 rounded-lg text-lg font-medium border text-gray-500" placeholder="Celular" />
-                            <input type="text" name="phone" id="phone" className="w-full py-3 px-4 rounded-lg text-lg font-medium border text-gray-500" placeholder="Telefone" />
-                            <input type="text" name="email" id="email" className="w-full py-3 px-4 rounded-lg text-lg font-medium border text-gray-500 md:col-span-2" placeholder="E-mail" />
-                            <select name="reason_id" id="reason_id" className="w-full py-3 px-4 rounded-lg text-lg font-medium border text-gray-500 md:col-span-2">
+                            <input type="text" name="name" onChange={handleName} value={name} className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500 md:col-span-2" placeholder="NOME" />
+                            <input type="text" name="mobile" onChange={handleMobile} value={mobile} className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500" placeholder="Celular" />
+                            <input type="text" name="phone" onChange={handlePhone} value={phone} className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500" placeholder="Telefone" />
+                            <input type="text" name="email" onChange={handleEmail} value={email} className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500 md:col-span-2" placeholder="E-mail" />
+                            <select name="reason_id" className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500 md:col-span-2">
                                 <option>MOTIVO DO CONTATO</option>
                                 <option value="1">Atendimento ao consumidor - SAC</option>
                                 <option value="2">Imprensa</option>
@@ -32,29 +68,18 @@ export default function Page() {
                                 <option value="6">Reportar Erro ou Problema</option>
                                 <option value="7">Outro Motivo</option>
                             </select>
-                            <textarea name="message" id="message" className="w-full py-3 px-4 rounded-lg text-lg font-medium border text-gray-500 md:col-span-2" placeholder="MENSAGEM"></textarea>
+                            <textarea name="message" className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500 md:col-span-2" placeholder="MENSAGEM"></textarea>
                             <input type="hidden" name="action" value="contact" />
-                            <input type="submit" className="bg-blue-500 text-gray-100 hover:bg-red-800 hover:text-gray-100 font-medium rounded-full my-4 py-2 px-10 block text-base uppercase" />
-                            <br />
+                            <input type="submit" className="bg-blue-500 text-gray-100 hover:bg-red-800 hover:text-gray-100 font-medium rounded-full my-4 py-2 px-10 block text-base uppercase" value="Enviar Contato" />
                         </div>
-                        <div id="response-contact" className="w-full"></div>
-                        <div
-                            className="hidden w-full bg-blue-500 text-white my-2 p-3 uppercase text-center font-reading font-bold border-2 border-white  border-dashed">
-                        </div>
-                        <div
-                            className="w-full bg-red-700 text-white my-2 p-3 uppercase text-center font-reading font-bold border-2 border-white  border-dashed">
-                        </div>
-                        <div
-                            className="w-full bg-yellow-600 text-white my-2 p-3 uppercase text-center font-reading font-bold border-2 border-white  border-dashed">
-                        </div>
-                        <div
-                            className="w-full bg-green-700 text-white my-2 p-3 uppercase text-center font-reading font-bold border-2 border-white  border-dashed">
-                        </div>
+                        {
+                            (responseMessage != '') ? <div id="response-contact" className="w-full"><div className={'wpcf7-response-output w-full text-white my-2 p-2 uppercase text-center font-reading font-bold border border-gray-300-2 border border-gray-300-white  border border-gray-300-dashed ' + colorMessage} role="alert">{responseMessage}</div></div> : ''
+                        }
                     </form>
                 </div>
                 <div>
-                    <div className="text-xl text-black rounded-xl font-brandon">
-                        <div className="border-red-700 border-blue-500 border-2 rounded-xl text-lg p-6 my-3 md:mt-0">
+                    <div className="text-xl text-black rounded-xl">
+                        <div className="border-red-700 border border-gray-300-blue-500 border border-gray-300-2 rounded-xl text-lg p-6 my-3 md:mt-0">
                             <div className="text-xl pb-2">
                                 <h3 className="font-bold uppercase">Informações de contato</h3>
                                 <p>Entre em contato conosco também pelas informações abaixo:</p>
@@ -62,45 +87,22 @@ export default function Page() {
                             <a href="">
                                 <div className="flex justify-start items-center pt-4 pb-6 rounded-lg hover:bg-gray-100">
                                     <div className="px-6 text-4xl text-blue-500">
-                                        <i className="fab fa-facebook"></i>
-                                    </div>
-                                    <div>
-                                        <div className="py-1 font-bold uppercase">Telefone:</div>
-                                        <div>(21) 3837-1544</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div className="flex justify-start items-center pt-4 pb-6 rounded-lg hover:bg-gray-100">
-                                    <div className="px-6 text-4xl text-blue-500">
-                                        <i className="fab fa-whatsapp"></i>
+                                        <FontAwesomeIcon icon={faWhatsapp} />
                                     </div>
                                     <div>
                                         <div className="py-1 font-bold uppercase">WhatsApp:</div>
-                                        <div>(21) 3837-1544</div>
+                                        <div>(21) 99999-9999</div>
                                     </div>
                                 </div>
                             </a>
                             <a href="">
                                 <div className="flex justify-start items-center pt-4 pb-6 rounded-lg hover:bg-gray-100">
                                     <div className="px-6 text-4xl text-blue-500">
-                                        <i className="far fa-envelope"></i>
+                                        <FontAwesomeIcon icon={faEnvelope} />
                                     </div>
                                     <div>
                                         <div className="py-1 font-bold uppercase">E-mail:</div>
-                                        <div>vendas@tintasnacional.com.br</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div className="flex justify-start items-center pt-4 pb-6 rounded-lg hover:bg-gray-100">
-                                    <div className="px-6 text-4xl text-blue-500">
-                                        <i className="fa-regular fa-map"></i>
-                                    </div>
-                                    <div>
-                                        <div className="py-1 font-bold uppercase">Endereço:</div>
-                                        <div>Av. Felíciano de Castilho, s/n, Lote 38 Quadra 25A. Chácara Rio-Petrópolis,
-                                            Duque de Caxias – RJ, 25231-250</div>
+                                        <div>contato@achacursos.com.br</div>
                                     </div>
                                 </div>
                             </a>

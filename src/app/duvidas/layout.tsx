@@ -7,7 +7,7 @@ import FooterCopyright from '../Parts/FooterCopyright';
 import BannerTitle from '../Parts/BannerTitle';
 
 export const metadata: Metadata = {
-    title: 'Fábio Freitas',
+    title: 'Acha Cursos',
     description: 'Publicidade e Produção',
 }
 

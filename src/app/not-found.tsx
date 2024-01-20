@@ -12,7 +12,7 @@ export default function NotFound() {
             <div className="flex flex-col items-center justify-between pt-10 pb-20">
                 <div className="flex flex-col">
                     <span className="text-center font-bold my-10 opacity-30">
-                        Fábio Freitas
+                        Acha Cursos
                     </span>
 
                     <div className="flex flex-col items-center">

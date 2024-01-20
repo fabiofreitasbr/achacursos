@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-input {
-    @apply border-gray-200 bg-white text-black font-reading border w-full py-3 px-5 shadow-md rounded-lg;
-}
 
 *:focus-visible {
   @apply outline-red-500 outline-1;

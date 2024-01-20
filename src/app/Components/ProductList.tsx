@@ -4,7 +4,7 @@ export default function ProductList() {
     return (
         <>
             <div className="px-2 py-2">
-                <a href="" className="h-full">
+                <a href="/single" className="h-full">
                     <div className="rounded-xl h-full overflow-hidden shadow-lg shadow-gray-300">
                         <div className="bg-blue-500 h-80 bg-cover bg-center" style={{ backgroundImage: "url(img/product-1.jpg);" }}></div>
                         <div className="px-6 py-4 flex justify-between">
