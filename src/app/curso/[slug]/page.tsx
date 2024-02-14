@@ -1,5 +1,5 @@
 "use client"
-import React, { Fragment, useState } from 'react';
+import React from 'react';
 
 export default function Page() {
     return (
@@ -8,7 +8,8 @@ export default function Page() {
                 <div className="container mx-auto px-4">
                     <div className="md:flex justify-between">
                         <div>
-                            <h1 className="mt-1 text-3xl font-semibold font-reading text-blue-500">Desenvolvimento Web</h1>
+                            {/* <Skeleton /> */}
+                            <h1 className="mt-1 text-3xl font-semibold text-blue-500">Desenvolvimento Web</h1>
                             <p className="text-lg font-medium text-gray-500">Estácio de Sá - Maricá/RJ</p>
                             <dl className="my-4 text-xs font-medium flex items-center">
                                 <dt className="sr-only">Location</dt>
@@ -35,7 +36,7 @@ export default function Page() {
                     <div className="flex flex-wrap">
                         <div className="w-full md:w-2/3">
                             <div className="">
-                                <img src="img/product-1.jpg" alt="" className="w-full h-96 overflow-hidden object-cover rounded-xl" />
+                                <img src="../img/product-1.jpg" alt="" className="w-full h-96 overflow-hidden object-cover rounded-xl" />
                             </div>
                             <div className="py-4 text-base text-gray-500">
                                 <h3 className="text-blue-500 my-2 text-2xl md:text-2xl font-open">Sobre o Curso</h3>
