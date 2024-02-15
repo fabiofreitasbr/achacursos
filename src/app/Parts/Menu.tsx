@@ -6,6 +6,9 @@ import { faInstagram, faSquareFacebook, faTiktok, faTwitter, faWhatsapp, faYoutu
 import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons';
 import SearchBar from './SearchBar';
 
+import ImgLogo from "../../../public/img/logo.png"
+import Image from 'next/image';
+
 interface menuType {
     title: string;
     link: string;
@@ -36,7 +39,7 @@ const Menu = () => {
                 <div className="container mx-auto px-4 flex items-center justify-between">
                     <div className="flex md:w-3/12 justify-start items-center">
                         <a href="/">
-                            <img src="img/logo.png" className="w-48 md:w-full" alt="" />
+                            <Image src={ImgLogo} className="w-48 md:w-full" alt="" />
                         </a>
                     </div>
                     <div className="block md:flex md:w-6/12 justify-center md:flex fixed md:relative top-0 md:top-auto h-screen md:h-auto w-full md:bg-none pt-20 md:pt-0 px-4 md:px-0 z-50 md:z-auto text-center md:text-left text-xl md:text-base  transition-all md:transition-none duration-300 ease-in-out -left-full md:!left-0" id="menu-search-bar">

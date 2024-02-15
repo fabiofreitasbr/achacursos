@@ -1,5 +1,7 @@
 "use client"
+import Image from 'next/image';
 import React from 'react';
+import thumbProduct from '../../../../public/img/product-1.jpg';
 
 export default function Page() {
     return (
@@ -14,8 +16,8 @@ export default function Page() {
                             <dl className="my-4 text-xs font-medium flex items-center">
                                 <dt className="sr-only">Location</dt>
                                 <dd className="flex items-center">
-                                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" className="mr-1 text-blue-500" aria-hidden="true">
+                                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+                                        strokeLinejoin="round" className="mr-1 text-blue-500" aria-hidden="true">
                                         <path d="M18 11.034C18 14.897 12 19 12 19s-6-4.103-6-7.966C6 7.655 8.819 5 12 5s6 2.655 6 6.034Z" />
                                         <path d="M14 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
                                     </svg>
@@ -36,7 +38,7 @@ export default function Page() {
                     <div className="flex flex-wrap">
                         <div className="w-full md:w-2/3">
                             <div className="">
-                                <img src="../img/product-1.jpg" alt="" className="w-full h-96 overflow-hidden object-cover rounded-xl" />
+                                <Image src={thumbProduct} alt="" className="w-full h-96 overflow-hidden object-cover rounded-xl" />
                             </div>
                             <div className="py-4 text-base text-gray-500">
                                 <h3 className="text-blue-500 my-2 text-2xl md:text-2xl font-open">Sobre o Curso</h3>

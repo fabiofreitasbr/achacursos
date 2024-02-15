@@ -1,6 +1,8 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faYoutube, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
+import ImgLogo from "../../../public/img/logo.png"
+import Image from 'next/image';
 
 const Footer = () => {
     return (
@@ -9,7 +11,7 @@ const Footer = () => {
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-16">
                         <div className="md:block flex justify-center md:flex-auto  col-span-2 md:col-span-1">
-                            <img src="img/logo.png" alt="" />
+                            <Image src={ImgLogo} alt="" />
                             <div className="hidden md:block">
                                 <h3 className=" py-3 font-bold text-red-700 uppercase">Sobre</h3>
                                 <p className="">
