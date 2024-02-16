@@ -1,6 +1,13 @@
 import ProductList from "@/app/Components/ProductList";
 
-function Destaques() {
+async function getData () {
+    const res = await fetch('http://localhost:3001/cursos', { next: { revalidate: 300 }});
+    if (!res.ok) { throw new Error('Houve algum erro ao buscar os cursos');  }
+    return res.json();
+}
+
+async function Destaques() {
+    const data = await getData();
     return (
 
         <section className="my-8" id="destasque-cursos">
@@ -17,10 +24,11 @@ function Destaques() {
                     </a>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr">
-                    <ProductList />
-                    <ProductList />
-                    <ProductList />
-                    <ProductList />
+                    {
+                        data.map((curso: any) => (
+                            <ProductList key={curso.id} content={curso} />
+                        ))
+                    }
                 </div>
                 <div className="w-full">
                     <a href="">
@@ -31,4 +39,4 @@ function Destaques() {
         </section>
     );
 }
-export default Destaques
+export default Destaques;

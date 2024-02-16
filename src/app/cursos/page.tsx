@@ -1,10 +1,16 @@
-"use client"
 import Image from 'next/image'
 import React from 'react';
-import ProductRecents from '../Components/ProdutectRecents';
+import ProductRecents from '../Components/ProductRecents';
 import ProductList from '../Components/ProductList';
+async function getData() {
+    const res = await fetch('http://localhost:3001/cursos', { next: { revalidate: 300}});
+    if (!res.ok) { throw new Error('Houve um erro ao tentar buscar os dados') }
+    return res.json();
+}
 
-export default function Page() {
+
+export default async function Page() {
+    const data: any = await getData();
     return (
         <main>
             <section className="py-8">
@@ -60,8 +66,11 @@ export default function Page() {
                         </div>
                         <div className="w-full md:w-2/3 lg:w-3/4">
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
-                                <ProductList />
-                                <ProductList />
+                                {
+                                    data.map((curso: any) => (
+                                        <ProductList key={curso.id} content={curso} />
+                                    ))
+                                }
                             </div>
                             <div className="mx-auto block text-center my-8">
                                 <ul className="inline-flex -space-x-px">
