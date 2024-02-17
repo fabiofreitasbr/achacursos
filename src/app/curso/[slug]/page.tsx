@@ -1,8 +1,8 @@
-import productSingle from '@/app/Components/ProductSingle';
+import ProductSingle from '@/app/Components/ProductSingle';
 import React from 'react';
 
-async function getData() { 
-    const res = await fetch('http://localhost:3001/cursos', { next: { revalidate: 300 }});
+async function getData() {
+    const res = await fetch('http://localhost:3001/cursos', { next: { revalidate: 300 } });
     if (!res.ok) { throw new Error('Houve algum erro ao buscar os dados'); }
     return res.json();
 }
@@ -14,7 +14,9 @@ export default async function Page() {
             <section className="py-8">
                 <div className="container mx-auto px-4">
                     {
-                        (data) ? <productSingle /> : null;
+                        data.map((curso: any) => (
+                            <ProductSingle key={curso.id} content={curso} />
+                        ))
                     }
                 </div>
             </section>
