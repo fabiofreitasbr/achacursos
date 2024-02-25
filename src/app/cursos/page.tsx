@@ -2,12 +2,12 @@ import Image from 'next/image'
 import React from 'react';
 import ProductRecents from '../Components/ProductRecents';
 import ProductList from '../Components/ProductList';
+
 async function getData() {
     const res = await fetch('http://localhost:3001/cursos', { next: { revalidate: 300}});
     if (!res.ok) { throw new Error('Houve um erro ao tentar buscar os dados') }
     return res.json();
 }
-
 
 export default async function Page() {
     const data: any = await getData();
