@@ -14,7 +14,7 @@ export default async function Page() {
             <section className="py-8">
                 <div className="container mx-auto px-4">
                     {
-                        (data) ? <productSingle /> : null;
+                        data ? (<productSingle />) : null
                     }
                 </div>
             </section>
