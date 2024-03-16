@@ -1,9 +1,10 @@
 import ProductList from "@/app/Components/ProductList";
+import axios from "axios";
 
-async function getData () {
-    const res = await fetch('http://localhost:3001/cursos', { next: { revalidate: 300 }});
-    if (!res.ok) { throw new Error('Houve algum erro ao buscar os cursos');  }
-    return res.json();
+async function getData() { 
+    const res = await axios({ url: "http://localhost:3001/cursos"});
+    if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
+    return res.data;
 }
 
 async function Destaques() {

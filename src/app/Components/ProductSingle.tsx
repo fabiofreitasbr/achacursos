@@ -50,8 +50,8 @@ export default function ProductSingle(props: any) {
                                 <div className="">
                                     <div className="py-3">
                                         <h4 className="text-lg text-orange uppercase">Aprenda</h4>
-                                        <p className="text-sm my-1 text-blue-500 ">R$ 2.031/m²</p>
-                                        <h3 className="text-2xl text-blue-500 font-medium uppercase">R$ 3.000,00</h3>
+                                        <p className="text-sm my-1 text-blue-500 "><del>R$ {curso.price}</del></p>
+                                        <h3 className="text-2xl text-blue-500 font-medium uppercase">R$ {curso.price_discount}</h3>
                                     </div>
                                 </div>
                                 <button type="button" className="bg-red-700 hover:bg-red-800 text-gray-100 font-medium rounded-full my-4 py-2 px-4 block text-lg mx-auto uppercase w-4/5">Conhecer o Curso</button>

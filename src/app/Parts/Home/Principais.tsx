@@ -1,9 +1,10 @@
 import ProductHighlight from "@/app/Components/ProductHighlight"
+import axios from "axios";
 
 async function getData() { 
-    const res = await fetch('http://localhost:3001/cursos', {next: { revalidate: 300 }});
-    if (!res.ok) { throw new Error('Houve algum erro ao tentar buscar os dados'); }
-    return res.json();
+    const res = await axios({ url: "http://localhost:3001/cursos"});
+    if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
+    return res.data;
 }
 
 async function Principais() {
