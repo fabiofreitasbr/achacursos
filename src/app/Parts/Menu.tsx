@@ -27,15 +27,6 @@ const Menu = () => {
         setMenuNavigation(currentNavigation);
     }
     
-    const menuList = [
-        { title: 'Início', link: '/' },
-        { title: 'Sobre Mim', link: '/sobre' },
-        { title: 'Vídeos', link: '/videos' },
-        { title: 'Serviços', link: '/servicos' },
-        { title: 'Presets', link: '/presets' },
-        { title: 'Cursos', link: '/cursos' },
-        { title: 'E-books', link: '/ebooks' },
-    ];
     return (
         <>
             <header className="w-full bg-gray-100 text-red-700 border-b-blue-500 border-b-2 md:border-none py-2">
@@ -54,29 +45,25 @@ const Menu = () => {
                         </div>
                     </div>
                     <div className="flex items-center md:w-3/12 justify-end md:text-sm lg:text-base">
-                        <div id="_desktop_user_info">
-                            <div className="user-info">
-                                <Link href="/duvidas" className="mx-1 md:mx-4 justify-center items-center hidden md:flex">
-                                    <div>
-                                        <FontAwesomeIcon className="fa-regular fa-circle-question text-blue-500 hover:text-red-500 text-2xl" icon={faCircleQuestion} />
-                                    </div>
-                                    <div className="hidden lg:block text-sm xl:text-base mx-1 xl:mx-3 uppercase">
-                                        Dúvidas
-                                    </div>
-                                </Link>
-                            </div>
+                        <div className="user-info">
+                            <Link href="/duvidas" className="mx-1 md:mx-4 justify-center items-center hidden md:flex">
+                                <div>
+                                    <FontAwesomeIcon className="fa-regular fa-circle-question text-blue-500 hover:text-red-500 text-2xl" icon={faCircleQuestion} />
+                                </div>
+                                <div className="hidden lg:block text-sm xl:text-base mx-1 xl:mx-3 uppercase">
+                                    Dúvidas
+                                </div>
+                            </Link>
                         </div>
-                        <div id="_desktop_user_info">
-                            <div className="user-info">
-                                <Link href="/contato" className="mx-1 xl:mx-4 justify-center items-center hidden md:flex">
-                                    <div>
-                                        <FontAwesomeIcon className="text-blue-500 hover:text-red-500 text-2xl" icon={faWhatsapp} />
-                                    </div>
-                                    <div className="hidden lg:block text-sm xl:text-base mx-1 xl:mx-3 uppercase">
-                                        Contato
-                                    </div>
-                                </Link>
-                            </div>
+                        <div className="user-info">
+                            <Link href="/contato" className="mx-1 xl:mx-4 justify-center items-center hidden md:flex">
+                                <div>
+                                    <FontAwesomeIcon className="text-blue-500 hover:text-red-500 text-2xl" icon={faWhatsapp} />
+                                </div>
+                                <div className="hidden lg:block text-sm xl:text-base mx-1 xl:mx-3 uppercase">
+                                    Contato
+                                </div>
+                            </Link>
                         </div>
                     </div>
                     <div className="flex md:hidden px-4 justify-start items-center">
@@ -95,38 +82,37 @@ const Menu = () => {
                     </div>
                 </div>
             </header>
-            <div className="menu js-top-menu hidden md:block bg-blue-500 text-white" id="_desktop_top_menu">
+            <div className="menu hidden md:block bg-blue-500 text-white">
                 <nav className="">
                     <div className="container mx-auto px-4 uppercase">
-                        <ul className=" z-10 top-menu flex justify-between items-center text-sm lg:text-lg" id="top-menu"
-                            data-depth="0">
+                        <ul className="z-10 top-menu flex justify-between items-center text-sm lg:text-lg" id="top-menu">
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/" data-depth="0">
+                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/">
                                     Home
                                 </Link>
                             </li>
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/cursos" data-depth="0">
+                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/cursos">
                                     Cursos Online
                                 </Link>
                             </li>
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/ebooks" data-depth="0">
+                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/ebooks">
                                     E-books
                                 </Link>
                             </li>
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/presenciais" data-depth="0">
+                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/presenciais">
                                     Presenciais
                                 </Link>
                             </li>
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/faculdade" data-depth="0">
+                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/faculdade">
                                     Faculdade
                                 </Link>
                             </li>
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/profissoes" data-depth="0">
+                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/profissoes">
                                     Por Profissão
                                 </Link>
                             </li>
