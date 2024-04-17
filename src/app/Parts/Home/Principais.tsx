@@ -1,14 +1,22 @@
 import ProductHighlight from "@/app/Components/ProductHighlight"
 import axios from "axios";
+import { Suspense } from "react";
 
-async function getData() { 
-    const res = await axios({ url: "http://localhost:3001/cursos"});
+async function GetData() {
+    const res = await axios({ url: "http://localhost:3001/cursos" });
     if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
-    return res.data;
+    return (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {
+                res.data.map((curso: any) => (
+                    <ProductHighlight key={curso.id} content={curso} />
+                ))
+            }
+        </div>
+    )
 }
 
-async function Principais() {
-    const data = await getData();
+function Principais() {
     return (
         <section className="my-8" id="destaque-principais">
             <div className="container mx-auto px-4">
@@ -29,13 +37,9 @@ async function Principais() {
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {
-                        data.map((curso: any) => (
-                            <ProductHighlight key={curso.id} content={curso} />        
-                        ))
-                    }
-                </div>
+                <Suspense fallback={<>asd</>}>
+                    <GetData />
+                </Suspense>
                 <div className="w-full">
                     <a href="">
                         <button type="button" className="bg-blue-500 hover:bg-blue-600 text-gray-100 font-medium rounded-full my-4 py-2 px-16 block text-lg mx-auto uppercase">VER MAIS</button>
@@ -45,4 +49,4 @@ async function Principais() {
         </section>
     );
 }
-export default Principais
+export default Principais;

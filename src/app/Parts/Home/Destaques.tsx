@@ -1,16 +1,23 @@
 import ProductList from "@/app/Components/ProductList";
 import axios from "axios";
+import { Suspense } from "react";
 
-async function getData() { 
-    const res = await axios({ url: "http://localhost:3001/cursos"});
+async function GetData() {
+    const res = await axios({ url: "http://localhost:3001/cursos" });
     if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
-    return res.data;
+    return (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr">
+            {
+                res.data.map((curso: any) => (
+                    <ProductList key={curso.id} content={curso} />
+                ))
+            }
+        </div>
+    )
 }
 
-async function Destaques() {
-    const data = await getData();
+function Destaques() {
     return (
-
         <section className="my-8" id="destasque-cursos">
             <div className="container mx-auto px-4">
                 <div className="px-2 my-2 flex flex-col lg:flex-row items-center">
@@ -24,13 +31,9 @@ async function Destaques() {
                         <button type="button" className="bg-blue-500 hover:bg-blue-600 text-gray-100 font-medium rounded-full py-1 px-8 text-base mx-4 uppercase">VER TODOS</button>
                     </a>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr">
-                    {
-                        data.map((curso: any) => (
-                            <ProductList key={curso.id} content={curso} />
-                        ))
-                    }
-                </div>
+                <Suspense fallback={<>asd</>}>
+                    <GetData />
+                </Suspense>
                 <div className="w-full">
                     <a href="">
                         <button type="button" className="bg-blue-500 hover:bg-blue-600 text-gray-100 font-medium rounded-full my-4 py-2 px-16 block text-lg mx-auto uppercase">VER MAIS</button>

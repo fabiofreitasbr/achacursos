@@ -8,6 +8,7 @@ import SearchBar from './SearchBar';
 
 import ImgLogo from "../../../public/img/logo.png"
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface menuType {
     title: string;
@@ -18,12 +19,14 @@ const Menu = () => {
 
     const [menuActive, setMenuActive] = useState('');
     const [menuNavigation, setMenuNavigation] = useState('-right-full');
+
     const menuBurger = () => {
         var currentActive = (menuActive == '') ? 'is-active' : '';
         var currentNavigation = (menuActive == '') ? 'right-0' : '-right-full';
         setMenuActive(currentActive);
         setMenuNavigation(currentNavigation);
     }
+    
     const menuList = [
         { title: 'Início', link: '/' },
         { title: 'Sobre Mim', link: '/sobre' },
@@ -38,11 +41,11 @@ const Menu = () => {
             <header className="w-full bg-gray-100 text-red-700 border-b-blue-500 border-b-2 md:border-none py-2">
                 <div className="container mx-auto px-4 flex items-center justify-between">
                     <div className="flex md:w-3/12 justify-start items-center">
-                        <a href="/">
+                        <Link href="/">
                             <Image src={ImgLogo} className="w-48 md:w-full" alt="" />
-                        </a>
+                        </Link>
                     </div>
-                    <div className="block md:flex md:w-6/12 justify-center md:flex fixed md:relative top-0 md:top-auto h-screen md:h-auto w-full md:bg-none pt-20 md:pt-0 px-4 md:px-0 z-50 md:z-auto text-center md:text-left text-xl md:text-base  transition-all md:transition-none duration-300 ease-in-out -left-full md:!left-0" id="menu-search-bar">
+                    <div className="block md:flex md:w-6/12 justify-center fixed md:relative top-0 md:top-auto h-screen md:h-auto w-full md:bg-none pt-20 md:pt-0 px-4 md:px-0 z-50 md:z-auto text-center md:text-left text-xl md:text-base  transition-all md:transition-none duration-300 ease-in-out -left-full md:!left-0" id="menu-search-bar">
                         <div className="button-close absolute block md:hidden top-0 right-0 px-4 py-2 my-2 mx-4 text-3xl bg-red-700 hover:bg-red-900 rounded-md text-white hover:text-yellow-300 transition-colors" id="search-menu-close">
                             <i className="fa-solid fa-xmark"></i>
                         </div>
@@ -53,26 +56,26 @@ const Menu = () => {
                     <div className="flex items-center md:w-3/12 justify-end md:text-sm lg:text-base">
                         <div id="_desktop_user_info">
                             <div className="user-info">
-                                <a href="/duvidas" className="mx-1 md:mx-4 justify-center items-center hidden md:flex">
+                                <Link href="/duvidas" className="mx-1 md:mx-4 justify-center items-center hidden md:flex">
                                     <div>
                                         <FontAwesomeIcon className="fa-regular fa-circle-question text-blue-500 hover:text-red-500 text-2xl" icon={faCircleQuestion} />
                                     </div>
                                     <div className="hidden lg:block text-sm xl:text-base mx-1 xl:mx-3 uppercase">
                                         Dúvidas
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div id="_desktop_user_info">
                             <div className="user-info">
-                                <a href="/contato" className="mx-1 xl:mx-4 justify-center items-center hidden md:flex">
+                                <Link href="/contato" className="mx-1 xl:mx-4 justify-center items-center hidden md:flex">
                                     <div>
                                         <FontAwesomeIcon className="text-blue-500 hover:text-red-500 text-2xl" icon={faWhatsapp} />
                                     </div>
                                     <div className="hidden lg:block text-sm xl:text-base mx-1 xl:mx-3 uppercase">
                                         Contato
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -98,38 +101,36 @@ const Menu = () => {
                         <ul className=" z-10 top-menu flex justify-between items-center text-sm lg:text-lg" id="top-menu"
                             data-depth="0">
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <a className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/" data-depth="0">
+                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/" data-depth="0">
                                     Home
-                                </a>
+                                </Link>
                             </li>
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <a className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/cursos" data-depth="0">
+                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/cursos" data-depth="0">
                                     Cursos Online
-                                </a>
+                                </Link>
                             </li>
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <a className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="" data-depth="0">
+                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/ebooks" data-depth="0">
                                     E-books
-                                </a>
+                                </Link>
                             </li>
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <a className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="" data-depth="0">
+                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/presenciais" data-depth="0">
                                     Presenciais
-                                </a>
+                                </Link>
                             </li>
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <a className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="" data-depth="0">
+                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/faculdade" data-depth="0">
                                     Faculdade
-                                </a>
+                                </Link>
                             </li>
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <a className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="" data-depth="0">
+                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/profissoes" data-depth="0">
                                     Por Profissão
-                                </a>
+                                </Link>
                             </li>
                         </ul>
-                        <div className="clearfix">
-                        </div>
                     </div>
                 </nav>
             </div>

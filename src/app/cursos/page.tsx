@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react';
 import ProductRecents from '../Components/ProductRecents';
 import ProductList from '../Components/ProductList';
