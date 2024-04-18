@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { LoadingRecentes } from "../Utils/loading";
-import { ProductRecents } from "@/app/Components/ProductRecents";
+import { LoadingRecentes } from "@/app/Parts/Utils/loading";
+import { ProductRecents } from "@/app/Parts/Components/ProductRecents";
 
 export default function ProdutosRecentes() {
     return (

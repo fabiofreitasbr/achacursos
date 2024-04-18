@@ -1,4 +1,4 @@
-import ProductList from "@/app/Components/ProductList";
+import ProductList from "@/app/Parts/Components/ProductList";
 import axios from "axios";
 import { Suspense } from "react";
 import LoadingCursos from "../Utils/loading";

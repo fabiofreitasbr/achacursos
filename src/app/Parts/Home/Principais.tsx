@@ -1,4 +1,4 @@
-import ProductHighlight from "@/app/Components/ProductHighlight"
+import ProductHighlight from "@/app/Parts/Components/ProductHighlight"
 import axios from "axios";
 import { Suspense } from "react";
 import LoadingCursos from "../Utils/loading";

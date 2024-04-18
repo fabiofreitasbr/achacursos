@@ -1,7 +1,7 @@
 
-import ProductList from '@/app/Components/ProductList';
-import PaginationElement from '../Utils/Pagination';
-import ContentArtigos from '../dados/contentArquivos';
+import ProductList from '@/app/Parts/Components/ProductList';
+import PaginationElement from '@/app/Parts/Utils/Pagination';
+import ContentArtigos from '@/app/Parts/dados/contentArquivos';
 
 export default async function ListData({ searchParams, params }: any) {
     const { data } = await ContentArtigos({ params, searchParams });

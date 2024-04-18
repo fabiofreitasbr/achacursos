@@ -9,7 +9,7 @@ export async function ProductRecents() {
             {
                 data.map((artigoCurrent: any) => (
                     <div key={artigoCurrent.slug} className="w-full py-2">
-                        <Link href={"/cursos/" + artigoCurrent.slug}>
+                        <Link href={"/curso/" + artigoCurrent.slug}>
                             <div className="rounded-xl overflow-hidden shadow-lg shadow-gray-300 flex">
                                 <div className="w-1/3">
                                     <Image className="w-full h-full overflow-hidden object-cover" alt={artigoCurrent.title} width={103} height={108} src={"/img/" + artigoCurrent.image} />

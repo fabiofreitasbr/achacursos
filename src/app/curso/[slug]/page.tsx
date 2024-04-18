@@ -1,4 +1,4 @@
-import ProductSingle from '@/app/Components/ProductSingle';
+import ProductSingle from '@/app/Parts/Components/ProductSingle';
 import axios from 'axios';
 import React from 'react';
 
