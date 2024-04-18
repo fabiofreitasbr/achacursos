@@ -8,7 +8,7 @@ interface slugInterface {
 }
 
 async function getData({params, searchParams}:slugInterface) {
-    const res = await axios.get( "https://api.achacursos.com.brcursos/single", {params: { slug: params.slug }});
+    const res = await axios.get( "https://api.achacursos.com.br/cursos/single", {params: { slug: params.slug }});
     if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
     return res.data;
 }

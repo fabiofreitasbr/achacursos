@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { LoadingRecentes } from "../Utils/loading";
 
 export async function ListBlogRecentes() {
-    const { data } = await axios.get("https://api.achacursos.com.brcursos/recentes");
+    const { data } = await axios.get("https://api.achacursos.com.br/cursos/recentes");
     return (
         <div>
             {
