@@ -3,7 +3,7 @@ import axios from "axios";
 import { Suspense } from "react";
 
 async function GetData() {
-    const res = await axios({ url: "http://localhost:3001/cursos" });
+    const res = await axios.get("http://localhost:3001/cursos/recentes");
     if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr">

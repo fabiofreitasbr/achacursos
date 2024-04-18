@@ -3,17 +3,18 @@ import axios from 'axios';
 import React from 'react';
 
 interface slugInterface {
-    slug: string
+    params: { slug: string },
+    searchParams: object,
 }
 
-async function getData(paramSlug:any) {
-    const res = await axios({ url: "http://localhost:3001/cursossingle", data: { slug: paramSlug }});
+async function getData({params, searchParams}:slugInterface) {
+    const res = await axios.get( "http://localhost:3001/cursos/single", {params: { slug: params.slug }});
     if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
     return res.data;
 }
 
-export default async function Page(params: slugInterface) {
-    const data = await getData(params.slug);
+export default async function Page({params, searchParams}: slugInterface) {
+    const data = await getData({params, searchParams});
     return (
         <main>
             <section className="py-8">

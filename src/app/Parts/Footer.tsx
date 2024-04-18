@@ -22,13 +22,11 @@ const Footer = () => {
                         <div className="">
                             <h3 className="py-3 font-bold text-red-700">LINKS IMPORTANTES</h3>
                             <ul className="">
-                                <li className="py-1"><a href="" className="text-blue-500 hover:text-red-500">Home</a></li>
-                                <li className="py-1"><a href="" className="text-blue-500 hover:text-red-500">Cursos Online</a></li>
-                                <li className="py-1"><a href="" className="text-blue-500 hover:text-red-500">E-books</a></li>
-                                <li className="py-1"><a href="" className="text-blue-500 hover:text-red-500">Presenciais</a></li>
-                                <li className="py-1"><a href="" className="text-blue-500 hover:text-red-500">Faculdade</a></li>
-                                <li className="py-1"><a href="" className="text-blue-500 hover:text-red-500">Gratuitos</a></li>
-                                <li className="py-1"><a href="" className="text-blue-500 hover:text-red-500">Por Categoria</a></li>
+                                <li className="py-1"><a href="/cursos" className="text-blue-500 hover:text-red-500">Cursos Online</a></li>
+                                <li className="py-1"><a href="/ebooks" className="text-blue-500 hover:text-red-500">E-books</a></li>
+                                <li className="py-1"><a href="/presenciais" className="text-blue-500 hover:text-red-500">Presenciais</a></li>
+                                <li className="py-1"><a href="/faculdade" className="text-blue-500 hover:text-red-500">Faculdade</a></li>
+                                <li className="py-1"><a href="/profissao" className="text-blue-500 hover:text-red-500">Por Profissão</a></li>
                             </ul>
                         </div>
                         <div className="">

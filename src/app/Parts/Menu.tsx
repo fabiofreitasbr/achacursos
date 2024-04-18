@@ -88,7 +88,7 @@ const Menu = () => {
                         <ul className="z-10 top-menu flex justify-between items-center text-sm lg:text-lg" id="top-menu">
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
                                 <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/">
-                                    Home
+                                    Início
                                 </Link>
                             </li>
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">

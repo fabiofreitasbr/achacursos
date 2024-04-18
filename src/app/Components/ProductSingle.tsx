@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import thumbProduct from '../../../public/img/product-1.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTag } from '@fortawesome/free-solid-svg-icons';
 
@@ -32,7 +31,7 @@ export default function ProductSingle(props: any) {
             <div className="flex flex-wrap">
                 <div className="w-full md:w-2/3">
                     <div className="">
-                        <Image src={thumbProduct} width={1080} height={500} alt="" className="w-full h-96 overflow-hidden object-cover rounded-xl" />
+                        <Image src={"/img/" + curso.image} width={1080} height={500} alt="" className="w-full h-96 overflow-hidden object-cover rounded-xl" />
                     </div>
                     <div className="py-4 text-base text-gray-500">
                         <h3 className="text-blue-500 my-2 text-2xl md:text-2xl font-open">Sobre o Curso</h3>
