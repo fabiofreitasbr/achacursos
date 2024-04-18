@@ -1,17 +1,19 @@
 
 import ProductList from '@/app/Components/ProductList';
-import axios from 'axios';
+import PaginationElement from '../Utils/Pagination';
+import ContentArtigos from '../dados/contentArquivos';
 
-export default async function ListData() {
-    const res = await axios({ url: "http://localhost:3001/cursos" });
-    if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
+export default async function ListData({ searchParams, params }: any) {
+    const { data } = await ContentArtigos({ params, searchParams });
+    const { courses, countTotal, pageCurrent, quantityPerPage } = data;
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
             {
-                res.data.map((curso: any) => (
+                (courses) ? courses.map((curso: any) => (
                     <ProductList key={curso.id} content={curso} />
-                ))
+                )) : null
             }
+            <PaginationElement params={params} countTotal={countTotal} pageCurrent={pageCurrent} quantityPerPage={quantityPerPage} searchParams={searchParams} />
         </div>
     )
 }

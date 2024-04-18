@@ -2,13 +2,17 @@ import ProductSingle from '@/app/Components/ProductSingle';
 import axios from 'axios';
 import React from 'react';
 
+interface slugInterface {
+    slug: string
+}
+
 async function getData(paramSlug:any) {
     const res = await axios({ url: "http://localhost:3001/cursossingle", data: { slug: paramSlug }});
     if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
     return res.data;
 }
 
-export default async function Page({params}) {
+export default async function Page(params: slugInterface) {
     const data = await getData(params.slug);
     return (
         <main>

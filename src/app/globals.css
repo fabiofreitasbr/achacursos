@@ -1,205 +1,76 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind components;
+  @tailwind utilities;
 
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 240 10% 3.9%;
 
-*:focus-visible {
-  @apply outline-red-500 outline-1;
-}
+      --card: 0 0% 100%;
+      --card-foreground: 240 10% 3.9%;
 
-table {
-  width: 100%;
-}
+      --popover: 0 0% 100%;
+      --popover-foreground: 240 10% 3.9%;
 
-.swiper {
-    width: 100%;
-    height: 100%;
+      --primary: 240 5.9% 10%;
+      --primary-foreground: 0 0% 98%;
+
+      --secondary: 240 4.8% 95.9%;
+      --secondary-foreground: 240 5.9% 10%;
+
+      --muted: 240 4.8% 95.9%;
+      --muted-foreground: 240 3.8% 46.1%;
+
+      --accent: 240 4.8% 95.9%;
+      --accent-foreground: 240 5.9% 10%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 0 0% 98%;
+
+      --border: 240 5.9% 90%;
+      --input: 240 5.9% 90%;
+      --ring: 240 10% 3.9%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 240 10% 3.9%;
+      --foreground: 0 0% 98%;
+
+      --card: 240 10% 3.9%;
+      --card-foreground: 0 0% 98%;
+
+      --popover: 240 10% 3.9%;
+      --popover-foreground: 0 0% 98%;
+
+      --primary: 0 0% 98%;
+      --primary-foreground: 240 5.9% 10%;
+
+      --secondary: 240 3.7% 15.9%;
+      --secondary-foreground: 0 0% 98%;
+
+      --muted: 240 3.7% 15.9%;
+      --muted-foreground: 240 5% 64.9%;
+
+      --accent: 240 3.7% 15.9%;
+      --accent-foreground: 0 0% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 0 0% 98%;
+
+      --border: 240 3.7% 15.9%;
+      --input: 240 3.7% 15.9%;
+      --ring: 240 4.9% 83.9%;
+    }
   }
 
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
   }
-
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-
-
-  .hamburger {
-    padding: 20px 5px;
-    display: inline-block;
-    cursor: pointer;
-    transition-property: opacity, filter;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
-    font: inherit;
-    color: inherit;
-    text-transform: none;
-    background-color: transparent;
-    border: 0;
-    margin: 0;
-    overflow: visible;
-}
-
-.hamburger:hover {
-  opacity: 0.9;
-}
-.hamburger.is-active {
-
-}
-.hamburger.is-active:hover {
-  opacity: 0.9;
-}
-.hamburger.is-active .hamburger-inner,
- .hamburger.is-active .hamburger-inner::before,
- .hamburger.is-active .hamburger-inner::after {
-      @apply bg-blue-500;
-  }
-.hamburger-box {
-    width: 40px;
-    height: 24px;
-    display: inline-block;
-    position: relative;
-}
-.hamburger-inner {
-    display: block;
-    top: 50%;
-    margin-top: -2px;
-}
-
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-  @apply bg-blue-500;
-  width: 40px;
-  height: 4px;
-  border-radius: 4px;
-  position: absolute;
-  transition-property: transform;
-  transition-duration: 0.15s;
-  transition-timing-function: ease;
-}
-.hamburger-inner::before, .hamburger-inner::after {
-  content: "";
-  display: block;
-}
-.hamburger-inner::before {
-  top: -10px;
-}
-.hamburger-inner::after {
-  bottom: -10px;
-}
-.hamburger--squeeze {
-
-}
-.hamburger--squeeze .hamburger-inner {
-  transition-duration: 0.075s;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.hamburger--squeeze .hamburger-inner::before {
-    transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-}
-.hamburger--squeeze .hamburger-inner::after {
-    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.hamburger--squeeze.is-active .hamburger-inner {
-  transform: rotate(45deg);
-  transition-delay: 0.12s;
-  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-.hamburger--squeeze.is-active .hamburger-inner::before {
-    top: 0;
-    opacity: 0;
-    transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-}
-.hamburger--squeeze.is-active .hamburger-inner::after {
-    bottom: 0;
-    transform: rotate(-90deg);
-    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-
-.step {
-  display: none;
-}
-
-.step.is-active {
-  display: block;
-}
-
-.input-group {
-  padding-bottom: 10px;
-}
-
-.input-group.has-error .form-control {
-  border-color: #ff3355;
-}
-
-.form-control {
-  padding: 10px 15px;
-  border: 1px solid #777777;
-}
-
-.btn-prev {
-  display: none;
-}
-
-.btn-prev.is-active {
-  display: inline-block;
-}
-
-.progress-bar {
-  @apply bg-red-700;
-  margin-bottom: 10px;
-  width: 100%;
-  height: 5px;
-  transform-origin: left center;
-  transform: scaleX(0.01);
-  transition: transform 0.2s ease;
-}
-
-.table {
-  @apply w-full my-4 bg-transparent text-left font-reading;
-}
-.table thead th {
-  @apply p-2 border-b-2 border-solid border-b-gray-200;
-}
-.table td {
-  @apply p-2 border-t border-t-gray-200;
-}
-
-.maps-frame {
-  @apply w-full h-80 md:h-full;
-}
-.modal img {
-  width: 100%;
-}
-
-.content-single iframe {
-  @apply aspect-video max-w-full;
-}
-
-.list-paginator li {
-    @apply py-2 px-3 leading-tight text-blue-500 bg-white border border-gray-300;
-}
-.list-paginator li:hover {
-    @apply text-blue-500;
-}

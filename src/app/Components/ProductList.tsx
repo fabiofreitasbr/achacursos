@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import thumbProduct from '../../../public/img/product-1.jpg';
 
 export default function ProductList(props: any) {
     return (
@@ -7,7 +6,7 @@ export default function ProductList(props: any) {
             <div className="px-2 py-2">
                 <a href={"/curso/" + props.content.slug} className="h-full">
                     <div className="rounded-xl h-full overflow-hidden shadow-lg shadow-gray-300">
-                        <Image src={thumbProduct} alt="" className="w-full h-80 overflow-hidden object-cover" />
+                        <Image src={"/img/" + props.content.image} width={313} height={320} alt="" className="w-full h-80 overflow-hidden object-cover" />
                         <div className="px-6 py-4 flex justify-between">
                             <div className="uppercase text-black">
                                 <div className="pb-4">

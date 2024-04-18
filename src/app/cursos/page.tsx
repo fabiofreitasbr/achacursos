@@ -3,9 +3,9 @@ import ProdutosRecentes from '@/app/Parts/cursos/produtosRecentes';
 import ProdutosTags from '@/app/Parts/cursos/produtosTags';
 import ProdutosPesquisa from '@/app/Parts/cursos/produtosPesquisa';
 import ListData from '@/app/Parts/cursos/listData';
-import Pagination from '@/app/Parts/Utils/Pagination';
+import LoadingCursos from '../Parts/Utils/loading';
 
-export default function Page() {
+export default function Page({ ...props }: any) {
     return (
         <main>
             <section className="py-8">
@@ -19,10 +19,9 @@ export default function Page() {
                             </aside>
                         </div>
                         <div className="w-full md:w-2/3 lg:w-3/4">
-                            <Suspense fallback={<>asd</>}>
-                                <ListData />
+                            <Suspense fallback={<LoadingCursos />}>
+                                <ListData {...props} />
                             </Suspense>
-                            <Pagination />
                         </div>
                     </div>
                 </div>
