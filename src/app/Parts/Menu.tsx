@@ -6,7 +6,7 @@ import { faInstagram, faSquareFacebook, faTiktok, faTwitter, faWhatsapp, faYoutu
 import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons';
 import SearchBar from './SearchBar';
 
-import ImgLogo from "@/public/img/logo.png"
+import ImgLogo from "../../../public/img/logo.png"
 import Image from 'next/image';
 import Link from 'next/link';
 
