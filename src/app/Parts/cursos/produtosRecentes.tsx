@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { LoadingRecentes } from "../Utils/loading";
 
 export async function ListBlogRecentes() {
-    const { data } = await axios.get("http://localhost:3001/cursos/recentes");
+    const { data } = await axios.get("https://achaback.vercel.app/cursos/recentes");
     return (
         <div>
             {

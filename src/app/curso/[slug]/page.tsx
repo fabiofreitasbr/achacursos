@@ -8,7 +8,7 @@ interface slugInterface {
 }
 
 async function getData({params, searchParams}:slugInterface) {
-    const res = await axios.get( "http://localhost:3001/cursos/single", {params: { slug: params.slug }});
+    const res = await axios.get( "https://achaback.vercel.app/cursos/single", {params: { slug: params.slug }});
     if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
     return res.data;
 }
