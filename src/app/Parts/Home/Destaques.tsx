@@ -1,6 +1,7 @@
 import ProductList from "@/app/Components/ProductList";
 import axios from "axios";
 import { Suspense } from "react";
+import LoadingCursos from "../Utils/loading";
 
 async function GetData() {
     const res = await axios.get("https://api.achacursos.com.br/cursos/recentes");
@@ -31,7 +32,7 @@ function Destaques() {
                         <button type="button" className="bg-blue-500 hover:bg-blue-600 text-gray-100 font-medium rounded-full py-1 px-8 text-base mx-4 uppercase">VER TODOS</button>
                     </a>
                 </div>
-                <Suspense fallback={<>asd</>}>
+                <Suspense fallback={<LoadingCursos />}>
                     <GetData />
                 </Suspense>
                 <div className="w-full">
