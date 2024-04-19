@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import LoadingCursos from "../Utils/loading";
 
 async function GetData() {
-    const res = await axios.get("https://api.achacursos.com.br/cursos/recentes");
+    const res = await axios.get(process.env.local_api + "cursos/recentes");
     if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr">

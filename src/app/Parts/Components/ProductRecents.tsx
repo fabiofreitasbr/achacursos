@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export async function ProductRecents() {
-    const { data } = await axios.get("https://api.achacursos.com.br/cursos/recentes");
+    const { data } = await axios.get(process.env.local_api + "cursos/recentes");
     return (
         <div>
             {
