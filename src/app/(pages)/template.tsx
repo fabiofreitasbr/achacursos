@@ -1,7 +1,7 @@
 
-import Footer from './Parts/Footer';
-import FooterCopyright from './Parts/FooterCopyright';
-import Menu from './Parts/Menu';
+import Footer from '../Parts/Footer';
+import FooterCopyright from '../Parts/FooterCopyright';
+import Menu from '../Parts/Menu';
 
 export default function Template({children}: any) {
     return(

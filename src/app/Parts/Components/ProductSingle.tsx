@@ -4,6 +4,7 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
 
 export default function ProductSingle(props: any) {
     const curso = props.content;
+    console.log(curso);
     return (
         <>
             <div className="md:flex justify-between">
