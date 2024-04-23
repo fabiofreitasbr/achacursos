@@ -24,17 +24,11 @@ function Principais() {
                 <div className="flex justify-center">
                     <div className="bg-gray-100 py-3 px-6 my-3 rounded-xl sm:rounded-full uppercase font-semibold text-orange">
                         <div className="flex flex-col sm:flex-row items-center text-sm lg:text-base text-center">
-                            <a href="/cursos" className="py-1 sm:py-0 px-4">
-                                CURSOS ONLINE
-                            </a>
+                            <a href="/cursos" className="py-1 sm:py-0 px-4">CURSOS ONLINE</a>
                             <hr className="h-[1px] w-full sm:w-[1px] sm:h-6 my-1 sm:my-0 bg-gray-300 border-gray-300 border border-solid rounded-full" />
-                            <a href="/presenciais" className="py-1 sm:py-0 px-4">
-                                PRESENCIAL
-                            </a>
+                            <a href="/presenciais" className="py-1 sm:py-0 px-4">PRESENCIAL</a>
                             <hr className="h-[1px] w-full sm:w-[1px] sm:h-6 my-1 sm:my-0 bg-gray-300 border-gray-300 border border-solid rounded-full" />
-                            <a href="/ebooks" className="py-1 sm:py-0 px-4">
-                                E-BOOK
-                            </a>
+                            <a href="/ebooks" className="py-1 sm:py-0 px-4">E-BOOK</a>
                         </div>
                     </div>
                 </div>

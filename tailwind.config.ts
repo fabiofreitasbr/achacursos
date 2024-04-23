@@ -105,6 +105,12 @@ const config: Config = {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
             },
+            backgroundImage: {
+                "categoria-1": "url(/img/categoria-1.png)",
+                "categoria-2": "url(/img/categoria-2.png)",
+                "categoria-3": "url(/img/categoria-3.png)",
+                "categoria-4": "url(/img/categoria-4.png)",
+            }
         },
     },
     plugins: [require("tailwindcss-animate")],
