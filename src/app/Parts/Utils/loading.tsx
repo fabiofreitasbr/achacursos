@@ -31,14 +31,7 @@ export function LoadingCursoSingle() {
 export function LoadingRecentesSingle() {
     return (
         <div className="w-full py-2">
-            <div className="rounded-xl bg-gray-100 overflow-hidden shadow-lg shadow-gray-300 flex">
-                <Skeleton className="bg-gray-900 h-[108px] w-1/3" />
-                <div className="w-2/3 px-4 pt-4 pb-1 uppercase">
-                    <Skeleton className="bg-gray-900 h-4 my-2 w-full" />
-                    <Skeleton className="bg-gray-900 h-4 my-2 w-full" />
-                    <Skeleton className="bg-gray-900 h-4 my-2 w-full" />
-                </div>
-            </div>
+            <Skeleton className="bg-gray-400 rounded-xl bg-gray-200 h-28 w-full" />
         </div>
     )
 }
@@ -60,6 +53,17 @@ export function LoadingRecentes() {
             <LoadingRecentesSingle />
             <LoadingRecentesSingle />
             <LoadingRecentesSingle />
+        </div>
+    )
+}
+export function LoadingTags() {
+    return (
+        <div className="my-2 flex flex-wrap gap-2">
+            <Skeleton className="bg-gray-400 inline-block w-20 h-10" />
+            <Skeleton className="bg-gray-400 inline-block w-20 h-10" />
+            <Skeleton className="bg-gray-400 inline-block w-20 h-10" />
+            <Skeleton className="bg-gray-400 inline-block w-20 h-10" />
+            <Skeleton className="bg-gray-400 inline-block w-20 h-10" />
         </div>
     )
 }
