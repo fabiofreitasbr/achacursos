@@ -1,7 +1,7 @@
 import ProductHighlight from "@/app/Parts/Components/ProductHighlight"
 import axios from "axios";
 import { Suspense } from "react";
-import LoadingCursos from "../Utils/loading";
+import { LoadingCursos } from "../Utils/loading";
 import Link from "next/link";
 
 async function GetData() {

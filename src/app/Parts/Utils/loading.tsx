@@ -37,7 +37,16 @@ export function LoadingRecentesSingle() {
 }
 
 
-export default function LoadingCursos() {
+export function LoadingCursos() {
+    return (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+            <LoadingCursoSingle />
+            <LoadingCursoSingle />
+            <LoadingCursoSingle />
+        </div>
+    )
+}
+export function LoadingDestaque() {
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
             <LoadingCursoSingle />

@@ -1,7 +1,7 @@
 import ProductList from "@/app/Parts/Components/ProductList";
 import axios from "axios";
 import { Suspense } from "react";
-import LoadingCursos from "../Utils/loading";
+import { LoadingDestaque } from "../Utils/loading";
 import Link from "next/link";
 
 async function GetData() {
@@ -33,7 +33,7 @@ function Destaques() {
                         <button type="button" className="bg-blue-500 hover:bg-blue-600 text-gray-100 font-medium rounded-full py-1 px-8 text-base mx-4 uppercase">VER TODOS</button>
                     </Link>
                 </div>
-                <Suspense fallback={<LoadingCursos />}>
+                <Suspense fallback={<LoadingDestaque />}>
                     <GetData />
                 </Suspense>
                 <div className="w-full">

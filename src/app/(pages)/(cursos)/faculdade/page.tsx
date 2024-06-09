@@ -3,7 +3,7 @@ import ProdutosRecentes from '@/app/Parts/cursos/produtosRecentes';
 import ProdutosTags from '@/app/Parts/cursos/produtosTags';
 import ProdutosPesquisa from '@/app/Parts/cursos/produtosPesquisa';
 import ListData from '@/app/Parts/cursos/listData';
-import LoadingCursos, { LoadingRecentes, LoadingTags } from '@/app/Parts/Utils/loading';
+import { LoadingCursos, LoadingRecentes, LoadingTags } from '@/app/Parts/Utils/loading';
 
 export default function Page({ ...props }: any) {
     return (
