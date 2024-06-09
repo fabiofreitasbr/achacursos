@@ -38,10 +38,14 @@ export default function ProductSingle(props: any) {
                         <h3 className="text-blue-500 my-2 text-2xl md:text-2xl font-open">Sobre o Curso</h3>
                         {curso.description}
                     </div>
-                    <div className="py-4 text-base text-gray-500">
-                        <h3 className="text-blue-500 my-2 text-2xl md:text-2xl font-open">Vídeo</h3>
-                        <iframe className="w-full aspect-video rounded-xl md:rounded-2xl lazyloaded" src={"https://www.youtube.com/embed/" + curso.video} title="YouTube video player"></iframe>
-                    </div>
+                    {
+                        curso.video ? (
+                            <div className="py-4 text-base text-gray-500">
+                                <h3 className="text-blue-500 my-2 text-2xl md:text-2xl font-open">Vídeo</h3>
+                                <iframe className="w-full aspect-video rounded-xl md:rounded-2xl lazyloaded" src={"https://www.youtube.com/embed/" + curso.video} title="YouTube video player"></iframe>
+                            </div>
+                        ) : null
+                    }
                 </div>
                 <div className="w-full md:w-1/3">
                     <div className="px-2 pb-6">
