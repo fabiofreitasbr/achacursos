@@ -65,7 +65,7 @@ export default function Page() {
                                 <option value="6">Reportar Erro ou Problema</option>
                                 <option value="7">Outro Motivo</option>
                             </select>
-                            <textarea name="message" className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500 md:col-span-2" placeholder="MENSAGEM"></textarea>
+                            <textarea name="message" className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500 md:col-span-2 h-32" placeholder="MENSAGEM"></textarea>
                             <input type="hidden" name="action" value="contact" />
                             <input type="submit" className="bg-blue-500 text-gray-100 hover:bg-red-800 hover:text-gray-100 font-medium rounded-full my-4 py-2 px-10 block text-base uppercase" value="Enviar Contato" />
                         </div>

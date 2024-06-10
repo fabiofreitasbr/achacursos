@@ -105,7 +105,7 @@ export default function Page() {
         <>
             <div className="grid grid-cols-4 gap-3">
                 {listaProfissoes.map((singleProfissao) => (
-                    <div key={singleProfissao.slug} className="bg-blue-500 text-gray-100 rounded-lg p-3 text-center ">{singleProfissao.title}</div>
+                    <div key={singleProfissao.slug} className="text-blue-500 bg-gray-100 rounded-lg p-3 text-center ">{singleProfissao.title}</div>
                 ))}
             </div>
         </>
