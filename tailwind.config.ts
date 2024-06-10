@@ -10,48 +10,46 @@ const config: Config = {
     ],
 
     theme: {
-        colors: {
-            'blue': {
-                '500': '#0073c0',
-                '600': '#02558D',
-            },
-            'red': {
-                '100': 'red',
-                '500': '#de2e2e',
-                '700': '#de2e2e',
-                '800': '#B42727',
-            },
-            'gray': {
-                '100': '#f3f4f6',
-                '200': '#e3e4e6',
-                '300': '#cdcdcd',
-                '400': '#ababab',
-                '500': '#757575',
-            },
-            'black': '#232323',
-            'white': 'white',
-            'transparent': 'transparent',
-        },
-        fontFamily: {
-            brandon: 'brandon-grotesque',
-            opensans: 'Open Sans',
-            body: ["brandon-grotesque"],
-            sans: ["brandon-grotesque"],
-            serif: ["brandon-grotesque"],
-            mono: ["brandon-grotesque"],
-            display: ["brandon-grotesque"],
-            reading: ["Open Sans"],
-        },
-
         container: {
             center: true,
             padding: "2rem",
             screens: {
+                "xl": "1200px",
                 "2xl": "1400px",
             },
         },
         extend: {
+            fontFamily: {
+                brandon: 'brandon-grotesque',
+                opensans: 'Open Sans',
+                body: ["brandon-grotesque"],
+                sans: ["brandon-grotesque"],
+                serif: ["brandon-grotesque"],
+                mono: ["brandon-grotesque"],
+                display: ["brandon-grotesque"],
+                reading: ["Open Sans"],
+            },
             colors: {
+                blue: {
+                    '500': '#0073c0',
+                    '600': '#02558D',
+                },
+                red: {
+                    '100': 'red',
+                    '500': '#de2e2e',
+                    '700': '#de2e2e',
+                    '800': '#B42727',
+                },
+                gray: {
+                    '100': '#f3f4f6',
+                    '200': '#e3e4e6',
+                    '300': '#cdcdcd',
+                    '400': '#ababab',
+                    '500': '#757575',
+                },
+                black: '#232323',
+                white: 'white',
+                transparent: 'transparent',
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
                 ring: "hsl(var(--ring))",

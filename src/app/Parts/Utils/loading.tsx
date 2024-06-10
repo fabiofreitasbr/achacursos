@@ -17,12 +17,12 @@ export function LoadingSingleCurso() {
 export function LoadingCursoSingle() {
     return (
         <div className="px-2 py-4 h-full transform hover:scale-105 transition duration-500">
-            <div className="bg-gray-200 rounded-xl h-full overflow-hidden">
-                <Skeleton className="bg-gray-900 h-[166px] w-full" />
+            <div className="rounded-xl h-full overflow-hidden">
+                <Skeleton className="bg-gray-200 h-[166px] w-full" />
                 <div className="px-3 md:px-6 pt-3 md:pt-6 pb-2 md:pb-4 uppercase">
-                    <Skeleton className="bg-gray-900 h-4 my-2 w-full" />
-                    <Skeleton className="bg-gray-900 h-4 my-2 w-full" />
-                    <Skeleton className="bg-gray-900 h-4 my-2 w-full" />
+                    <Skeleton className="bg-gray-200 h-4 my-2 w-full" />
+                    <Skeleton className="bg-gray-200 h-4 my-2 w-full" />
+                    <Skeleton className="bg-gray-200 h-4 my-2 w-full" />
                 </div>
             </div>
         </div>

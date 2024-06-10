@@ -6,6 +6,8 @@ import ListData from '@/app/Parts/cursos/listData';
 import { LoadingCursos, LoadingRecentes, LoadingTags } from '@/app/Parts/Utils/loading';
 
 export default function Page({ ...props }: any) {
+    const pathName = props;
+    console.log(pathName);
     return (
         <main>
             <section className="py-8">
@@ -13,7 +15,7 @@ export default function Page({ ...props }: any) {
                     <div className="flex flex-wrap">
                         <div className="md:w-1/3 lg:w-1/4 px-4  md:block">
                             <aside>
-                                    <ProdutosPesquisa />
+                                <ProdutosPesquisa />
                                 <Suspense fallback={<LoadingRecentes />}>
                                     <ProdutosRecentes />
                                 </Suspense>
