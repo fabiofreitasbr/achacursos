@@ -1,12 +1,11 @@
 'use client'
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram, faSquareFacebook, faTiktok, faTwitter, faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons';
 import SearchBar from './SearchBar';
 
-import ImgLogo from "../../../public/img/logo.png"
+import ImgLogo from "../../../../public/img/logo.png"
 import Image from 'next/image';
 import Link from 'next/link';
 

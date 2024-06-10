@@ -1,5 +1,5 @@
 import Template from './(pages)/template'
-import BannerTitle from './Parts/BannerTitle'
+import BannerTitle from './Parts/estrutura/BannerTitle'
 
 export default function NotFound() {
     return (

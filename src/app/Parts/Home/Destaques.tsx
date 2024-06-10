@@ -1,7 +1,7 @@
 import ProductList from "@/app/Parts/Components/ProductList";
 import axios from "axios";
 import { Suspense } from "react";
-import { LoadingDestaque } from "../Utils/loading";
+import { LoadingDestaque } from "@/app/Parts/Utils/loading";
 import Link from "next/link";
 
 async function GetData() {
