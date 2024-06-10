@@ -1,5 +1,5 @@
 
-const cursos = [
+const listaProfissoes = [
     { title: 'Administração', slug: 'administracao' },
     { title: 'Administração Pública', slug: 'administracao-publica' },
     { title: 'Análise e Desenvolvimento de Sistemas', slug: 'analise-e-desenvolvimento-de-sistemas' },
@@ -10,8 +10,7 @@ const cursos = [
     { title: 'Biomedicina', slug: 'biomedicina' },
     { title: 'Ciência de Dados', slug: 'ciencia-de-dados' },
     { title: 'Ciências Aeronáuticas', slug: 'ciencias-aeronauticas' },
-    { title: 'Ciências Biológicas - Bacharelado', slug: 'ciencias-biologicas-bacharelado' },
-    { title: 'Ciências Biológicas - Licenciatura', slug: 'ciencias-biologicas-licenciatura' },
+    { title: 'Ciências Biológicas', slug: 'ciencias-biologicas' },
     { title: 'Ciências Contábeis', slug: 'ciencias-contabeis' },
     { title: 'Ciências da Computação', slug: 'ciencias-da-computacao' },
     { title: 'Ciências Econômicas', slug: 'ciencias-economicas' },
@@ -25,11 +24,9 @@ const cursos = [
     { title: 'Design', slug: 'design' },
     { title: 'Design de Interiores', slug: 'design-de-interiores' },
     { title: 'Design de Moda', slug: 'design-de-moda' },
-    { title: 'Design de Moda Bacharelado', slug: 'design-de-moda-bacharelado' },
     { title: 'Design Gráfico', slug: 'design-grafico' },
     { title: 'Direito', slug: 'direito' },
-    { title: 'Educação Física - Bacharelado', slug: 'educacao-fisica-bacharelado' },
-    { title: 'Educação Física - Licenciatura', slug: 'educacao-fisica-licenciatura' },
+    { title: 'Educação Física', slug: 'educacao-fisica' },
     { title: 'Enfermagem', slug: 'enfermagem' },
     { title: 'Engenharia Ambiental e Sanitária', slug: 'engenharia-ambiental-e-sanitaria' },
     { title: 'Engenharia Civil', slug: 'engenharia-civil' },
@@ -51,8 +48,7 @@ const cursos = [
     { title: 'Formação pedagógica', slug: 'formacao-pedagogica' },
     { title: 'Fotografia', slug: 'fotografia' },
     { title: 'Gastronomia', slug: 'gastronomia' },
-    { title: 'Geografia - Bacharelado', slug: 'geografia-bacharelado' },
-    { title: 'Geografia - Licenciatura', slug: 'geografia-licenciatura' },
+    { title: 'Geografia', slug: 'geografia' },
     { title: 'Gerontologia - Bem Estar e Educação', slug: 'gerontologia-bem-estar-e-educacao' },
     { title: 'Gestão Ambiental', slug: 'gestao-ambiental' },
     { title: 'Gestão Comercial', slug: 'gestao-comercial' },
@@ -63,24 +59,18 @@ const cursos = [
     { title: 'Gestão Hospitalar', slug: 'gestao-hospitalar' },
     { title: 'Gestão Pública', slug: 'gestao-publica' },
     { title: 'Gestão de Segurança Privada', slug: 'gestao-de-seguranca-privada' },
-    { title: 'História - Bacharelado', slug: 'historia-bacharelado' },
-    { title: 'História - Licenciatura', slug: 'historia-licenciatura' },
-    { title: 'História - 2ªLicenciatura', slug: 'historia-2alicenciatura' },
+    { title: 'História', slug: 'historia' },
     { title: 'Investigação Forense e Perícia Criminal', slug: 'investigacao-forense-e-pericia-criminal' },
     { title: 'Jogos Digitais', slug: 'jogos-digitais' },
     { title: 'Jornalismo', slug: 'jornalismo' },
     { title: 'Letras - Espanhol', slug: 'letras-espanhol' },
-    { title: 'Letras - Espanhol - Pedagógica', slug: 'letras-espanhol-pedagogica' },
-    { title: 'Letras - Inglês - Licenciatura', slug: 'letras-ingles-licenciatura' },
+    { title: 'Letras - Inglês', slug: 'letras-ingles' },
     { title: 'Letras - Língua Portuguesa', slug: 'letras-lingua-portuguesa' },
-    { title: 'Letras - Língua Portuguesa - 2ª Licenciatura', slug: 'letras-lingua-portuguesa-2a-licenciatura' },
     { title: 'Logística', slug: 'logistica' },
     { title: 'Manutenção Industrial', slug: 'manutencao-industrial' },
     { title: 'Marketing', slug: 'marketing' },
     { title: 'Marketing Digital', slug: 'marketing-digital' },
-    { title: 'Matemática - Bacharelado', slug: 'matematica-bacharelado' },
-    { title: 'Matemática - Formação Pedagógica ', slug: 'matematica-formacao-pedagogica' },
-    { title: 'Matemática - 2ª Licenciatura', slug: 'matematica-2a-licenciatura' },
+    { title: 'Matemática', slug: 'matematica' },
     { title: 'Mediação', slug: 'mediacao' },
     { title: 'Medicina Veterinária', slug: 'medicina-veterinaria' },
     { title: 'Negócios Imobiliários', slug: 'negocios-imobiliarios' },
@@ -94,7 +84,7 @@ const cursos = [
     { title: 'Produção Fonográfica', slug: 'producao-fonografica' },
     { title: 'Psicologia', slug: 'psicologia' },
     { title: 'Publicidade e Propaganda', slug: 'publicidade-e-propaganda' },
-    { title: 'Química - Licenciatura', slug: 'quimica-licenciatura' },
+    { title: 'Química', slug: 'quimica' },
     { title: 'Radiologia', slug: 'radiologia' },
     { title: 'Redes de Computadores', slug: 'redes-de-computadores' },
     { title: 'Redes de Telecomunicações', slug: 'redes-de-telecomunicacoes' },
@@ -105,16 +95,19 @@ const cursos = [
     { title: 'Sistemas de Informação', slug: 'sistemas-de-informacao' },
     { title: 'Sistemas para Internet', slug: 'sistemas-para-internet' },
     { title: 'Sociologia', slug: 'sociologia' },
-    { title: 'Teatro - Licenciatura', slug: 'teatro-licenciatura' },
+    { title: 'Teatro', slug: 'teatro' },
     { title: 'Teologia', slug: 'teologia' },
-    { title: 'Turismo - Bacharelado', slug: 'turismo-bacharelado' },
-    { title: 'Turismo - Licenciatura', slug: 'turismo-licenciatura' },
-]
+    { title: 'Turismo', slug: 'turismo' },
+];
 
 export default function Page() {
     return (
         <>
-            asd
+            <div className="grid grid-cols-4 gap-3">
+                {listaProfissoes.map((singleProfissao) => (
+                    <div key={singleProfissao.slug} className="bg-blue-500 text-gray-100 rounded-lg p-3 text-center ">{singleProfissao.title}</div>
+                ))}
+            </div>
         </>
     )
 }
