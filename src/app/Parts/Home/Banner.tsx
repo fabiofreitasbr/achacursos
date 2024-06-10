@@ -1,6 +1,6 @@
 function Banner() {
     return (
-        <section id="banner" className="my-8">
+        <section id="banner" className="mb-8">
             <div className="container mx-auto px-4">
                 <div className="swiper rounded-xl md:rounded-2xl overflow-hidden">
                     <div className="swiper-wrapper">
