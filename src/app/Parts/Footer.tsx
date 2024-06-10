@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faYoutube, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 import ImgLogo from "../../../public/img/logo.png"
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -22,30 +23,30 @@ const Footer = () => {
                         <div className="">
                             <h3 className="py-3 font-bold text-red-700">LINKS IMPORTANTES</h3>
                             <ul className="">
-                                <li className="py-1"><a href="/cursos" className="text-blue-500 hover:text-red-500">Cursos Online</a></li>
-                                <li className="py-1"><a href="/ebooks" className="text-blue-500 hover:text-red-500">E-books</a></li>
-                                <li className="py-1"><a href="/presenciais" className="text-blue-500 hover:text-red-500">Presenciais</a></li>
-                                <li className="py-1"><a href="/faculdade" className="text-blue-500 hover:text-red-500">Faculdade</a></li>
-                                <li className="py-1"><a href="/profissao" className="text-blue-500 hover:text-red-500">Por Profissão</a></li>
+                                <li className="py-1"><Link href="/cursos" className="text-blue-500 hover:text-red-500">Cursos Online</Link></li>
+                                <li className="py-1"><Link href="/ebooks" className="text-blue-500 hover:text-red-500">E-books</Link></li>
+                                <li className="py-1"><Link href="/presenciais" className="text-blue-500 hover:text-red-500">Presenciais</Link></li>
+                                <li className="py-1"><Link href="/faculdade" className="text-blue-500 hover:text-red-500">Faculdade</Link></li>
+                                <li className="py-1"><Link href="/profissao" className="text-blue-500 hover:text-red-500">Por Profissão</Link></li>
                             </ul>
                         </div>
                         <div className="">
                             <h3 className="py-3 font-bold text-red-700">REDES SOCIAIS</h3>
                             <div className="font-bold py-2 bg-pink md:text-lg flex text-red-700 gap-5">
                                 <div>
-                                    <a href="">
+                                    <Link href="">
                                         <FontAwesomeIcon className='h-5 md:h-7 text-blue-500 hover:text-red-500' icon={faFacebookSquare} />
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div>
-                                    <a href="">
+                                    <Link href="">
                                         <FontAwesomeIcon className='h-5 md:h-7 text-blue-500 hover:text-red-500' icon={faInstagram} />
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div>
-                                    <a href="">
+                                    <Link href="">
                                         <FontAwesomeIcon className='h-5 md:h-7 text-blue-500 hover:text-red-500' icon={faYoutube} />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

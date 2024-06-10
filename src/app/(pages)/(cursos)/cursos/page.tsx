@@ -6,32 +6,24 @@ import ListData from '@/app/Parts/cursos/listData';
 import { LoadingCursos, LoadingRecentes, LoadingTags } from '@/app/Parts/Utils/loading';
 
 export default function Page({ ...props }: any) {
-    const pathName = props;
-    console.log(pathName);
     return (
-        <main>
-            <section className="py-8">
-                <div className="container mx-auto px-4">
-                    <div className="flex flex-wrap">
-                        <div className="md:w-1/3 lg:w-1/4 px-4  md:block">
-                            <aside>
-                                <ProdutosPesquisa />
-                                <Suspense fallback={<LoadingRecentes />}>
-                                    <ProdutosRecentes />
-                                </Suspense>
-                                <Suspense fallback={<LoadingTags />}>
-                                    <ProdutosTags />
-                                </Suspense>
-                            </aside>
-                        </div>
-                        <div className="w-full md:w-2/3 lg:w-3/4">
-                            <Suspense fallback={<LoadingCursos />}>
-                                <ListData {...props} />
-                            </Suspense>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+        <div className="flex flex-wrap">
+            <div className="md:w-1/3 lg:w-1/4 px-4  md:block">
+                <aside>
+                    <ProdutosPesquisa />
+                    <Suspense fallback={<LoadingRecentes />}>
+                        <ProdutosRecentes />
+                    </Suspense>
+                    <Suspense fallback={<LoadingTags />}>
+                        <ProdutosTags />
+                    </Suspense>
+                </aside>
+            </div>
+            <div className="w-full md:w-2/3 lg:w-3/4">
+                <Suspense fallback={<LoadingCursos />}>
+                    <ListData {...props} />
+                </Suspense>
+            </div>
+        </div>
     )
 }

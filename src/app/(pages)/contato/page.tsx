@@ -17,9 +17,9 @@ export default function Page() {
     const [message, setMessage] = useState('');
     const [colorMessage, setColorMessage] = useState('bg-red-700');
 
-    const handleName = (e: ChangeEvent<HTMLInputElement>) => { setName(e.target.value); }; 
+    const handleName = (e: ChangeEvent<HTMLInputElement>) => { setName(e.target.value); };
     const handleEmail = (e: ChangeEvent<HTMLInputElement>) => { setEmail(e.target.value); };
-    const handlePhone = (e: ChangeEvent<HTMLInputElement>) => { setPhone(e.target.value); }; 
+    const handlePhone = (e: ChangeEvent<HTMLInputElement>) => { setPhone(e.target.value); };
     const handleMobile = (e: ChangeEvent<HTMLInputElement>) => { setMobile(e.target.value); };
 
     function onSubmitSend(event: FormEvent<HTMLFormElement>) {
@@ -36,18 +36,15 @@ export default function Page() {
                 phone: phone,
                 mobile: mobile,
             })
-            .then(function (response) {
-                setResponseMessage(response.data.message);
-                if (response.data.status == true) { setColorMessage('bg-green-700'); } else { setColorMessage('bg-red-700'); }
-            })
-            .catch(function (error) { setResponseMessage("HOUVE UM ERRO AO ENVIAR A MENSAGEM"); });
+                .then(function (response) {
+                    setResponseMessage(response.data.message);
+                    if (response.data.status == true) { setColorMessage('bg-green-700'); } else { setColorMessage('bg-red-700'); }
+                })
+                .catch(function (error) { setResponseMessage("HOUVE UM ERRO AO ENVIAR A MENSAGEM"); });
         }
     }
-  return (
-    <main>
-        <section className="py-8">
-        <div className="container mx-auto px-4">
-
+    return (
+        <>
             <h3 className="my-2 font-medium text-2xl font-open uppercase text-blue-500">Entre em contato</h3>
             <h4 className="font-reading text-lg mb-4">Enviaremos mensagem via whatsapp</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4">
@@ -110,8 +107,6 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    </main>
-  )
+        </>
+    )
 }

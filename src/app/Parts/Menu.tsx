@@ -112,7 +112,7 @@ const Menu = () => {
                                 </Link>
                             </li>
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
-                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/profissoes">
+                                <Link className="py-4 flex items-center justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/profissao">
                                     Por Profissão
                                 </Link>
                             </li>

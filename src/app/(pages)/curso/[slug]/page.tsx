@@ -7,23 +7,19 @@ interface slugInterface {
     searchParams: object,
 }
 
-async function getData({params, searchParams}:slugInterface) {
-    const res = await axios.get( process.env.local_api + "cursos/single", {params: { slug: params.slug }});
+async function getData({ params, searchParams }: slugInterface) {
+    const res = await axios.get(process.env.local_api + "cursos/single", { params: { slug: params.slug } });
     if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
     return res.data;
 }
 
-export default async function Page({params, searchParams}: slugInterface) {
-    const data = await getData({params, searchParams});
+export default async function Page({ params, searchParams }: slugInterface) {
+    const data = await getData({ params, searchParams });
     return (
-        <main>
-            <section className="py-8">
-                <div className="container mx-auto px-4">
-                    {
-                        data ? (<ProductSingle content={data} />) : null
-                    }
-                </div>
-            </section>
-        </main>
+        <>
+            {
+                data ? (<ProductSingle content={data} />) : null
+            }
+        </>
     )
 }

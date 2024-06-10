@@ -48,7 +48,8 @@ export function LoadingCursos() {
 }
 export function LoadingDestaque() {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr">
+            <LoadingCursoSingle />
             <LoadingCursoSingle />
             <LoadingCursoSingle />
             <LoadingCursoSingle />
