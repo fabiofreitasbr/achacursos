@@ -12,7 +12,7 @@ const Footer = () => {
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-16">
                         <div className="md:block flex justify-center md:flex-auto  col-span-2 md:col-span-1">
-                            <Image src={ImgLogo} alt="" />
+                            <Image src={ImgLogo} className='my-4 md:my-0' alt="" />
                             <div className="hidden md:block">
                                 <h3 className=" py-3 font-bold text-red-700 uppercase">Sobre</h3>
                                 <p className="">
