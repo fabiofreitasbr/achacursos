@@ -1,14 +1,33 @@
+'use client'
+
+// @ts-ignore
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+
+import '@splidejs/react-splide/css';
+
+// or only core styles
+import '@splidejs/react-splide/css/core';
+import Image from 'next/image';
+import Link from 'next/link';
+
 function Banner() {
     return (
+
         <section id="banner" className="mb-8">
             <div className="container mx-auto px-4">
-                <div className="swiper rounded-xl md:rounded-2xl overflow-hidden">
-                    <div className="swiper-wrapper">
-                        <div className="swiper-slide"><a href="" className="w-full" target="_blank"><img src="img/banner.jpg" alt="" className="w-full" /></a></div>
-                    </div>
-                    <div className="swiper-pagination"></div>
-                    <div className="swiper-button-prev after:text-red-700 after:!text-2xl after:md:!text-4xl"></div>
-                    <div className="swiper-button-next after:text-red-700 after:!text-2xl after:md:!text-4xl"></div>
+                <div className="swiper rounded-xl md:rounded-2xl overflow-hidden">                    
+                    <Splide aria-label="My Favorite Images">
+                        <SplideSlide>
+                            <Link href="">
+                                <Image src="/img/banner.jpg" width={1136} height={359} alt="" className="w-full" />
+                            </Link>
+                        </SplideSlide>
+                        <SplideSlide>
+                            <Link href="">
+                                <Image src="/img/banner.jpg" width={1136} height={359} alt="" className="w-full" />
+                            </Link>
+                        </SplideSlide>
+                    </Splide>
                 </div>
             </div>
         </section>
