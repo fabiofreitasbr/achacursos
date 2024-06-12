@@ -30,6 +30,9 @@ const Menu = () => {
         var currentNavigation = (menuActive == '') ? 'right-0' : '-right-full';
         setMenuActive(currentActive);
         setMenuNavigation(currentNavigation);
+        console.log(menuActive);
+        console.log(currentActive);
+        !menuActive ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto');
     }
     const menuSearch = () => {
         var searchStatus = (menuSearchBar == '-left-full') ? 'left-0' : '-left-full';
@@ -89,10 +92,10 @@ const Menu = () => {
                     </div>
                 </div>
             </header>
-            <div onClick={menuBurger} className={"z-10 menu bg-blue-500 text-white w-full md:w-auto h-screen md:h-auto fixed md:relative md:right-0 top-0 px-6 pt-16 md:pt-0 transition-all duration-300 ease-in-out  " + menuNavigation}>
+            <div onClick={menuBurger} className={"z-10 menu bg-blue-500 text-white w-full md:w-auto h-screen md:h-auto fixed md:relative md:right-0 top-0 px-2 md:px-6 pt-20 md:pt-0 transition-all duration-300 ease-in-out  " + menuNavigation}>
                 <nav className="">
-                    <div className="container mx-auto px-4 uppercase">
-                        <ul className="z-10 top-menu flex flex-col md:flex-row justify-between md:items-center text-sm lg:text-lg" id="top-menu">
+                    <div className="container mx-auto px-0 md:px-4 uppercase">
+                        <ul className="z-10 top-menu flex flex-col md:flex-row justify-between md:items-center text-base lg:text-lg" id="top-menu">
                             <li className="dropdown-item dropdown mx-2 category" id="category-12">
                                 <Link className="py-4 flex items-center md:justify-center hover:bg-red-800 px-2 lg:px-4 transition" href="/">
                                     Início
