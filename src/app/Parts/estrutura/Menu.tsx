@@ -46,7 +46,7 @@ const Menu = () => {
                         </Link>
                     </div>
                     <div className={"block md:flex md:w-6/12 bg-blue-500 md:!bg-transparent justify-center fixed md:relative top-0 md:top-auto h-screen md:h-auto w-full md:bg-none pt-20 md:pt-0 px-4 md:px-0 z-50 md:z-auto text-center md:text-left text-xl md:text-base  transition-all md:transition-none duration-300 ease-in-out md:!left-0 " + menuSearchBar}>
-                        <div className="button-close absolute block md:hidden top-0 right-0 px-4 py-2 my-2 mx-4 text-3xl bg-red-700 hover:bg-red-900 rounded-md text-white hover:text-yellow-300 transition-colors" onClick={menuSearch}>
+                        <div className="button-close absolute block md:hidden top-0 right-0 px-4 py-2 my-2 mx-4 text-3xl bg-red-700 hover:bg-red-800 rounded-md text-white transition-colors" onClick={menuSearch}>
                             <FontAwesomeIcon icon={faXmark} />
                         </div>
                         <div id="search_widget" className="w-full relative" data-search-controller-url="/pesquisa">
