@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons';
@@ -25,6 +25,9 @@ const Menu = () => {
     const [menuActive, setMenuActive] = useState('');
     const [menuNavigation, setMenuNavigation] = useState('-right-full');
     const [menuSearchBar, setMenuSearchBar] = useState('-left-full');
+    
+    const [width, setWidth] = useState(0);
+    const handleResize = () => setWidth(window.innerWidth);
 
     const menuBurger = () => {
         var currentActive = (menuActive == '') ? 'is-active' : '';
@@ -38,16 +41,23 @@ const Menu = () => {
     const menuSearch = () => {
         var searchStatus = (menuSearchBar == '-left-full') ? 'left-0' : '-left-full';
         setMenuSearchBar(searchStatus);
+        menuSearchBar != '-left-full' ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto');
     }
-    
+
+    useEffect(() => {
+      window.addEventListener('resize', handleResize);
+      if (width >= 768) { document.body.style.overflow = 'auto'; }
+      else { menuActive == '' && menuSearchBar == '-left-full' ? document.body.style.overflow = 'auto' :  document.body.style.overflow = 'hidden'; }
+    }, [handleResize]);
+
     return (
         <>
             <header className="z-20 relative w-full bg-blue-500 md:bg-gray-100 text-red-700 border-b-red-500 border-b-2 md:border-none py-2">
                 <div className="container mx-auto px-4 flex items-center justify-between">
                     <div className="flex md:w-3/12 justify-start items-center">
                         <Link href="/">
-                            <Image src={ImgLogo} className="hidden md:block w-32 md:w-48 md:w-full" alt="" />
-                            <Image src={ImgLogoWhite} className="block md:hidden w-32 md:w-48 md:w-full" alt="" />
+                            <Image src={ImgLogo} className="hidden md:block w-36" alt="" />
+                            <Image src={ImgLogoWhite} className="block md:hidden w-32 " alt="" />
                         </Link>
                     </div>
                     <div className={"block md:flex md:w-6/12 bg-blue-500 md:!bg-transparent justify-center fixed md:relative top-0 md:top-auto h-screen md:h-auto w-full md:bg-none pt-20 md:pt-0 px-4 md:px-0 z-50 md:z-auto text-center md:text-left text-xl md:text-base  transition-all md:transition-none duration-300 ease-in-out md:!left-0 " + menuSearchBar}>

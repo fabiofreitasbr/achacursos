@@ -8,7 +8,7 @@ export default function Template({ children }: any) {
         <div>
             <Menu />
             <main>
-                <section className="py-8">
+                <section className="py-4 md:py-8">
                     <div className="container mx-auto px-4">
                         {children}
                     </div>
