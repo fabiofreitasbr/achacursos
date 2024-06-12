@@ -103,9 +103,9 @@ const listaProfissoes = [
 export default function Page() {
     return (
         <>
-            <div className="grid grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3">
                 {listaProfissoes.map((singleProfissao) => (
-                    <div key={singleProfissao.slug} className="text-blue-500 bg-gray-100 rounded-lg p-3 text-center ">{singleProfissao.title}</div>
+                    <div key={singleProfissao.slug} className="text-blue-500 bg-gray-100 rounded-lg p-3 text-center text-xs sm:text-base">{singleProfissao.title}</div>
                 ))}
             </div>
         </>

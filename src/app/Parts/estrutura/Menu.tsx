@@ -8,7 +8,7 @@ import SearchBar from './SearchBar';
 import ImgLogo from "../../../../public/img/logo.png"
 import Image from 'next/image';
 import Link from 'next/link';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { usePathname } from 'next/navigation';
 
 interface menuType {
@@ -23,12 +23,17 @@ const Menu = () => {
 
     const [menuActive, setMenuActive] = useState('');
     const [menuNavigation, setMenuNavigation] = useState('-right-full');
+    const [menuSearchBar, setMenuSearchBar] = useState('-left-full');
 
     const menuBurger = () => {
         var currentActive = (menuActive == '') ? 'is-active' : '';
         var currentNavigation = (menuActive == '') ? 'right-0' : '-right-full';
         setMenuActive(currentActive);
         setMenuNavigation(currentNavigation);
+    }
+    const menuSearch = () => {
+        var searchStatus = (menuSearchBar == '-left-full') ? 'left-0' : '-left-full';
+        setMenuSearchBar(searchStatus);
     }
     
     return (
@@ -40,29 +45,29 @@ const Menu = () => {
                             <Image src={ImgLogo} className="w-32 md:w-48 md:w-full" alt="" />
                         </Link>
                     </div>
-                    <div className="block md:flex md:w-6/12 justify-center fixed md:relative top-0 md:top-auto h-screen md:h-auto w-full md:bg-none pt-20 md:pt-0 px-4 md:px-0 z-50 md:z-auto text-center md:text-left text-xl md:text-base  transition-all md:transition-none duration-300 ease-in-out -left-full md:!left-0" id="menu-search-bar">
-                        <div className="button-close absolute block md:hidden top-0 right-0 px-4 py-2 my-2 mx-4 text-3xl bg-red-700 hover:bg-red-900 rounded-md text-white hover:text-yellow-300 transition-colors" id="search-menu-close">
-                            <i className="fa-solid fa-xmark"></i>
+                    <div className={"block md:flex md:w-6/12 bg-blue-500 md:!bg-transparent justify-center fixed md:relative top-0 md:top-auto h-screen md:h-auto w-full md:bg-none pt-20 md:pt-0 px-4 md:px-0 z-50 md:z-auto text-center md:text-left text-xl md:text-base  transition-all md:transition-none duration-300 ease-in-out md:!left-0 " + menuSearchBar}>
+                        <div className="button-close absolute block md:hidden top-0 right-0 px-4 py-2 my-2 mx-4 text-3xl bg-red-700 hover:bg-red-900 rounded-md text-white hover:text-yellow-300 transition-colors" onClick={menuSearch}>
+                            <FontAwesomeIcon icon={faXmark} />
                         </div>
                         <div id="search_widget" className="w-full relative" data-search-controller-url="/pesquisa">
                             <SearchBar />
                         </div>
                     </div>
-                    <div className="flex items-center md:w-3/12 justify-end gap-2 md:text-sm lg:text-base">
-                        <div className="user-info">
+                    <div className="flex items-center md:w-3/12 justify-end gap-1 md:gap-2 md:text-sm lg:text-base">
+                        <div className="">
                             <Link href="/duvidas" className="mx-2 2xl:mx-4 justify-center items-center block md:flex">
                                 <div>
-                                    <FontAwesomeIcon className="fa-regular fa-circle-question text-blue-500 hover:text-red-500 text-2xl" icon={faCircleQuestion} />
+                                    <FontAwesomeIcon className="text-red-500 md:text-blue-500 md:hover:text-red-500 hover:text-red-600 text-2xl" icon={faCircleQuestion} />
                                 </div>
                                 <div className="hidden lg:block text-sm xl:text-base mx-1 xl:mx-3 uppercase">
                                     Dúvidas
                                 </div>
                             </Link>
                         </div>
-                        <div className="user-info">
+                        <div className="">
                             <Link href="/contato" className="mx-2 2xl:mx-4 justify-center items-center block md:flex">
                                 <div>
-                                    <FontAwesomeIcon className="text-blue-500 hover:text-red-500 text-2xl" icon={faWhatsapp} />
+                                    <FontAwesomeIcon className="text-red-500 md:text-blue-500 md:hover:text-red-500 hover:text-red-600 text-2xl" icon={faWhatsapp} />
                                 </div>
                                 <div className="hidden lg:block text-sm xl:text-base mx-1 xl:mx-3 uppercase">
                                     Contato
@@ -70,9 +75,9 @@ const Menu = () => {
                             </Link>
                         </div>
                         <div className="flex md:hidden justify-start items-center">
-                            <a className="mx-4">
+                            <div onClick={menuSearch} className="mx-4">
                                 <FontAwesomeIcon className="text-2xl text-blue-500" icon={faMagnifyingGlass} />
-                            </a>
+                            </div>
                             <div onClick={menuBurger}>
                                 <div className={"hamburger hamburger--squeeze " + menuActive}>
                                     <div className="hamburger-box">
