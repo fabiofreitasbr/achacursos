@@ -1,25 +1,13 @@
-import ProductSingle from '@/app/Parts/Components/ProductSingle';
-import axios from 'axios';
-import React from 'react';
+import ProductSingle, { slugInterface } from '@/app/Parts/Components/ProductSingle';
+import { LoadingSingle } from '@/app/Parts/Utils/loading';
+import React, { Suspense } from 'react';
 
-interface slugInterface {
-    params: { slug: string },
-    searchParams: object,
-}
-
-async function getData({ params, searchParams }: slugInterface) {
-    const res = await axios.get(process.env.local_api + "cursos/single", { params: { slug: params.slug } });
-    if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
-    return res.data;
-}
-
-export default async function Page({ params, searchParams }: slugInterface) {
-    const data = await getData({ params, searchParams });
+export default async function Page({params, searchParams}: slugInterface) {
     return (
         <>
-            {
-                data ? (<ProductSingle content={data} />) : null
-            }
+            <Suspense fallback={<LoadingSingle />}>
+                <ProductSingle params={params} searchParams={searchParams} />
+            </Suspense>
         </>
     )
 }
