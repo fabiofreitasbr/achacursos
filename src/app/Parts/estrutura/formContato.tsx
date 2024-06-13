@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
 
-export default function Contato() {
+export default function FormContato() {
     
     const [responseMessage, setResponseMessage] = useState('');
     const [name, setName] = useState<string>('');
