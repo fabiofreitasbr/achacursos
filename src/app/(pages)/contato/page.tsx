@@ -55,14 +55,14 @@ export default function Page() {
                             <input type="text" name="mobile" onChange={handleMobile} value={mobile} className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500" placeholder="Celular" />
                             <input type="text" name="phone" onChange={handlePhone} value={phone} className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500" placeholder="Telefone" />
                             <input type="text" name="email" onChange={handleEmail} value={email} className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500 md:col-span-2" placeholder="E-mail" />
-                            <select name="reason_id" className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500 md:col-span-2">
+                            <select name="motivo" className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500 md:col-span-2">
                                 <option>MOTIVO DO CONTATO</option>
-                                <option value="1">Atendimento ao consumidor - SAC</option>
-                                <option value="2">Imprensa</option>
-                                <option value="3">Reclamações</option>
-                                <option value="4">Sugestões</option>
-                                <option value="5">Elogios</option>
-                                <option value="6">Reportar Erro ou Problema</option>
+                                <option value="atendimento">Atendimento ao consumidor - SAC</option>
+                                <option value="imprensa">Imprensa</option>
+                                <option value="reclamacoes">Reclamações</option>
+                                <option value="sugestoes">Sugestões</option>
+                                <option value="elogios">Elogios</option>
+                                <option value="bug">Reportar Erro ou Problema</option>
                                 <option value="7">Outro Motivo</option>
                             </select>
                             <textarea name="message" className="w-full py-3 px-4 rounded-lg text-lg font-medium border border-gray-300 text-gray-500 md:col-span-2 h-32" placeholder="MENSAGEM"></textarea>
