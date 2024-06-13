@@ -1,21 +1,17 @@
 const ContentLinks = {
     
-	email: '',
-    emailShow: '',
+	email: 'mailto:achacursosweb@gmail.com',
+    emailShow: 'achacursosweb@gmail.com',
 
-	phone: '',
-    phoneShow: '',
+	phone: 'tel:+5521967681160',
+    phoneShow: '(21) 96768-1160',
 
-	whatsapp: '',
-    whatsappShow: '',
+	whatsapp: 'https://wa.me/5521967681160',
+    whatsappShow: '(21) 96768-1160',
     
-	facebook: '',
-	instagram: '',
-    youtube: '',
-    
-	maps: '',
-    address1: '',
-    address2: '',
+	facebook: 'https://facebook.com/achacursos',
+	instagram: 'https://instagram.com/achacursos',
+    youtube: 'https://www.youtube.com/@achacursos',
 };
 
 export default ContentLinks;

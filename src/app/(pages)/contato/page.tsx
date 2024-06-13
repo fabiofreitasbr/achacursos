@@ -6,6 +6,7 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import axios from 'axios';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import FormContato from '@/app/Parts/estrutura/formContato';
+import ContentLinks from '@/app/Parts/dados/contentLinks';
 
 
 export default function Page() {
@@ -24,25 +25,25 @@ export default function Page() {
                                 <h3 className="font-bold uppercase">Informações de contato</h3>
                                 <p>Entre em contato conosco também pelas informações abaixo:</p>
                             </div>
-                            <a href="">
+                            <a href={ContentLinks.whatsapp}>
                                 <div className="flex justify-start items-center pt-4 pb-6 rounded-lg hover:bg-gray-100">
                                     <div className="px-6 text-4xl text-blue-500">
                                         <FontAwesomeIcon icon={faWhatsapp} />
                                     </div>
                                     <div>
                                         <div className="py-1 font-bold uppercase">WhatsApp:</div>
-                                        <div>(21) 99999-9999</div>
+                                        <div>{ContentLinks.phoneShow}</div>
                                     </div>
                                 </div>
                             </a>
-                            <a href="">
+                            <a href={ContentLinks.email}>
                                 <div className="flex justify-start items-center pt-4 pb-6 rounded-lg hover:bg-gray-100">
                                     <div className="px-6 text-4xl text-blue-500">
                                         <FontAwesomeIcon icon={faEnvelope} />
                                     </div>
                                     <div>
                                         <div className="py-1 font-bold uppercase">E-mail:</div>
-                                        <div>contato@achacursos.com.br</div>
+                                        <div>{ContentLinks.emailShow}</div>
                                     </div>
                                 </div>
                             </a>

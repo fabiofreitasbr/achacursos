@@ -4,6 +4,7 @@ import { faInstagram, faYoutube, faFacebookSquare } from '@fortawesome/free-bran
 import ImgLogo from "../../../../public/img/logo.png"
 import Image from 'next/image';
 import Link from 'next/link';
+import ContentLinks from '../dados/contentLinks';
 
 const Footer = () => {
     return (
@@ -34,17 +35,17 @@ const Footer = () => {
                             <h3 className="py-3 font-bold text-red-700">REDES SOCIAIS</h3>
                             <div className="font-bold py-2 bg-pink md:text-lg flex text-red-700 gap-5">
                                 <div>
-                                    <Link href="">
+                                    <Link href={ContentLinks.facebook}>
                                         <FontAwesomeIcon className='h-5 md:h-7 text-blue-500 hover:text-red-500' icon={faFacebookSquare} />
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="">
+                                    <Link href={ContentLinks.instagram}>
                                         <FontAwesomeIcon className='h-5 md:h-7 text-blue-500 hover:text-red-500' icon={faInstagram} />
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="">
+                                    <Link href={ContentLinks.youtube}>
                                         <FontAwesomeIcon className='h-5 md:h-7 text-blue-500 hover:text-red-500' icon={faYoutube} />
                                     </Link>
                                 </div>
