@@ -4,18 +4,27 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 
 export interface slugInterface {
-    params: { slug: string },
+    params: { slug?: string },
     searchParams: object,
 }
 
-async function getData({ params, searchParams }: slugInterface) {
-    const res = await axios.get(process.env.local_api + "cursos/single", { params: { slug: params.slug } });
-    if (!res.status) { throw new Error('Houve um erro ao tentar buscar os dados'); }
+async function getData(slug?: string) {
+    if (!slug) throw new Error("Slug não encontrado");
+
+    const res = await axios.get(`${process.env.local_api}cursos/single`, {
+        params: { slug },
+    });
+
+    if (res.status !== 200) {
+        throw new Error("Houve um erro ao tentar buscar os dados");
+    }
+
     return res.data;
 }
 
 export default async function ProductSingle({params, searchParams}: slugInterface) {
-    const data = await getData({ params, searchParams });
+    const { slug } = params;
+    const data = await getData(slug);
     
     return (
         <>
