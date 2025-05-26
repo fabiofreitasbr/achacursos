@@ -1,5 +1,5 @@
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
-import { Params, SearchParams } from "../dados/contentArquivos";
+import { Params, SearchParams } from "../Types/searchParams";
 
 
 export default function PaginationElement({ params, countTotal, pageCurrent, quantityPerPage, searchParams }: { params: Params, countTotal: number, pageCurrent: number, quantityPerPage: number, searchParams: SearchParams }) {

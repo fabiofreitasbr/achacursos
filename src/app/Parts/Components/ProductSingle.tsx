@@ -2,13 +2,10 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTag } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import { Params, SearchParamsInterface } from '../Types/searchParams';
 
-export interface slugInterface {
-    params: { slug?: string | undefined },
-    searchParams: object,
-}
 
-async function getData(slug?: string) {
+async function getData(slug?: Params['slug']) {
     if (!slug) throw new Error("Slug não encontrado");
 
     const res = await axios.get(`${process.env.local_api}cursos/single`, {
@@ -22,7 +19,7 @@ async function getData(slug?: string) {
     return res.data;
 }
 
-export default async function ProductSingle({params, searchParams}: slugInterface) {
+export default async function ProductSingle({params, searchParams}: SearchParamsInterface) {
     const { slug } = params;
     const data = await getData(slug);
     
