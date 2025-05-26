@@ -1,9 +1,10 @@
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
+import { Params, SearchParams } from "../dados/contentArquivos";
 
 
-export default function PaginationElement({ params, countTotal, pageCurrent, quantityPerPage, searchParams }: any) {
+export default function PaginationElement({ params, countTotal, pageCurrent, quantityPerPage, searchParams }: { params: Params, countTotal: number, pageCurrent: number, quantityPerPage: number, searchParams: SearchParams }) {
 
-    const quantityPage = Math.ceil(countTotal / quantityPerPage);
+    const quantityPage = Math.max(1, Math.ceil(countTotal / quantityPerPage));
 
     const initialpage = (pageCurrent > 2) ? (pageCurrent - 2) : 1;
     const searchCurrent = (searchParams.s) ? "?s=" + searchParams.s : "";
@@ -13,7 +14,6 @@ export default function PaginationElement({ params, countTotal, pageCurrent, qua
     }
 
     const preLink = (params.slug) ? "/tag/" + params.slug + "/p/" : "/blog/p/";
-
     if (quantityPage > 1) {
         return (
             <Pagination className='text-blue-500 my-4'>

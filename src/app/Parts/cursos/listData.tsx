@@ -1,9 +1,9 @@
 
 import ProductList from '@/app/Parts/Components/ProductList';
 import PaginationElement from '@/app/Parts/Utils/Pagination';
-import ContentArtigos from '@/app/Parts/dados/contentArquivos';
+import ContentArtigos, { Params, SearchParams } from '@/app/Parts/dados/contentArquivos';
 
-export default async function ListData({ searchParams, params }: any) {
+export default async function ListData({params, searchParams} : { params: Params, searchParams: SearchParams }) {
     const { data } = await ContentArtigos({ params, searchParams });
     const { courses, countTotal, pageCurrent, quantityPerPage } = data;
     return (

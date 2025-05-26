@@ -1,6 +1,15 @@
 import axios from "axios";
 
-export default async function ContentArtigos({params, searchParams} : any) {
+export interface SearchParams {
+    s?: string;
+}
+
+export interface Params {
+    slug?: string;
+    page?: number;
+}
+
+export default async function ContentArtigos({params, searchParams} : { params: Params, searchParams: SearchParams }) {
     const search = (searchParams.s) ? searchParams.s : "";
     const slug = (params.slug) ? params.slug : null;
     const page = (params.page) ? params.page : null;
