@@ -1,9 +1,9 @@
 export interface SearchParams {
-    s?: string;
+    s: string;
 }
 
 export interface Params {
-    slug?: string;
+    slug: string;
     page?: number;
 }
 
