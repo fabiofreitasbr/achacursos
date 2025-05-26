@@ -4,7 +4,7 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 
 export interface slugInterface {
-    params: { slug?: string },
+    params: { slug?: string | undefined },
     searchParams: object,
 }
 
