@@ -1,11 +1,12 @@
 import axios from "axios";
-import { SearchParamsInterface } from "../Types/searchParams";
+import { Params, SearchParams } from "../Types/searchParams";
 
-
-export default async function ContentArtigos({params, searchParams} : SearchParamsInterface) {
-    const search = (searchParams.s) ? searchParams.s : "";
-    const slug = (params.slug) ? params.slug : null;
-    const page = (params.page) ? params.page : null;
+export default async function ContentArtigos({params, searchParams} : { params: Promise<Params>, searchParams: Promise<SearchParams> }) {
+    const resolvedParams = await params;
+    const resolvedSearchParams = await searchParams;
+    const search = (resolvedSearchParams.s) ? resolvedSearchParams.s : "";
+    const slug = (resolvedParams.slug) ? resolvedParams.slug : null;
+    const page = (resolvedParams.page) ? resolvedParams.page : null;
     
     // await new Promise(resolve => setTimeout(resolve, 3000));
 

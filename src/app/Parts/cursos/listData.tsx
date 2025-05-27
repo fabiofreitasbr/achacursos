@@ -2,11 +2,12 @@
 import ProductList from '@/app/Parts/Components/ProductList';
 import PaginationElement from '@/app/Parts/Utils/Pagination';
 import ContentArtigos from '@/app/Parts/dados/contentArquivos';
-import { SearchParamsInterface } from '../Types/searchParams';
+import { Params, SearchParams } from '../Types/searchParams';
 
-export default async function ListData({params, searchParams} : SearchParamsInterface) {
+export default async function ListData({params, searchParams} : { params: Promise<Params>, searchParams: Promise<SearchParams> }) {
     const { data } = await ContentArtigos({ params, searchParams });
     const { courses, countTotal, pageCurrent, quantityPerPage } = data;
+    
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
             {

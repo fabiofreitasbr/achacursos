@@ -2,18 +2,19 @@ import { Pagination, PaginationContent, PaginationItem, PaginationLink, Paginati
 import { Params, SearchParams } from "../Types/searchParams";
 
 
-export default function PaginationElement({ params, countTotal, pageCurrent, quantityPerPage, searchParams }: { params: Params, countTotal: number, pageCurrent: number, quantityPerPage: number, searchParams: SearchParams }) {
-
+export default async function PaginationElement({ params, countTotal, pageCurrent, quantityPerPage, searchParams }: { params: Promise<Params>, countTotal: number, pageCurrent: number, quantityPerPage: number, searchParams: Promise<SearchParams> }) {
+    const resolvedParams = await params;
+    const resolvedSearchParams = await searchParams;
     const quantityPage = Math.max(1, Math.ceil(countTotal / quantityPerPage));
 
     const initialpage = (pageCurrent > 2) ? (pageCurrent - 2) : 1;
-    const searchCurrent = (searchParams.s) ? "?s=" + searchParams.s : "";
+    const searchCurrent = (resolvedSearchParams.s) ? "?s=" + resolvedSearchParams.s : "";
     let rows = [];
     for (var n = initialpage; n <= quantityPage && n <= pageCurrent + 2; n++) {
         rows.push(n);
     }
 
-    const preLink = (params.slug) ? "/tag/" + params.slug + "/p/" : "/blog/p/";
+    const preLink = (resolvedParams.slug) ? "/tag/" + params.slug + "/p/" : "/blog/p/";
     if (quantityPage > 1) {
         return (
             <Pagination className='text-blue-500 my-4'>

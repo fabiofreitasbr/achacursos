@@ -4,8 +4,9 @@ import ProdutosTags from '@/app/Parts/cursos/produtosTags';
 import ProdutosPesquisa from '@/app/Parts/cursos/produtosPesquisa';
 import ListData from '@/app/Parts/cursos/listData';
 import { LoadingCursos, LoadingRecentes, LoadingTags } from '@/app/Parts/Utils/loading';
+import { Params, SearchParams } from '@/app/Parts/Types/searchParams';
 
-export default function Page(props: any) {
+export default function Page({params, searchParams}: { params: Promise<Params>, searchParams: Promise<SearchParams> }) {
     return (
         <div className="flex flex-wrap">
             <div className="md:w-1/3 lg:w-1/4 px-4  md:block">
@@ -21,7 +22,7 @@ export default function Page(props: any) {
             </div>
             <div className="w-full md:w-2/3 lg:w-3/4">
                 <Suspense fallback={<LoadingCursos />}>
-                    <ListData {...props} />
+                    <ListData params={params} searchParams={searchParams} />
                 </Suspense>
             </div>
         </div>
