@@ -5,7 +5,7 @@ import ProdutosPesquisa from '@/app/Parts/cursos/produtosPesquisa';
 import ListData from '@/app/Parts/cursos/listData';
 import { LoadingCursos, LoadingRecentes, LoadingTags } from '@/app/Parts/Utils/loading';
 
-export default function Page({ ...props }: any) {
+export default function Page(props: any) {
     return (
         <main>
             <section className="py-8">

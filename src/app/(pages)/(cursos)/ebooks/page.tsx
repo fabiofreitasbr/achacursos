@@ -5,7 +5,7 @@ import ProdutosPesquisa from '@/app/Parts/cursos/produtosPesquisa';
 import ListData from '@/app/Parts/cursos/listData';
 import { LoadingCursos, LoadingRecentes, LoadingTags } from '@/app/Parts/Utils/loading';
 
-export default function Page({ ...props }: any) {
+export default function Page(props: any) {
     return (
         <div className="flex flex-wrap">
             <div className="md:w-1/3 lg:w-1/4 px-4  md:block">
