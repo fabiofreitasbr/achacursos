@@ -6,12 +6,14 @@ import ListData from '@/app/Parts/cursos/listData';
 import { LoadingCursos, LoadingRecentes, LoadingTags } from '@/app/Parts/Utils/loading';
 import { Params, SearchParams } from '@/app/Parts/Types/searchParams';
 
-export default function Page({params, searchParams}: { params: Promise<Params>, searchParams: Promise<SearchParams> }) {
+export default function Page({ params, searchParams }: { params: Promise<Params>, searchParams: Promise<SearchParams> }) {
     return (
         <div className="flex flex-wrap">
             <div className="md:w-1/3 lg:w-1/4 px-4  md:block">
                 <aside>
-                    <ProdutosPesquisa />
+                    <Suspense fallback={<LoadingRecentes />}>
+                        <ProdutosPesquisa />
+                    </Suspense>
                     <Suspense fallback={<LoadingRecentes />}>
                         <ProdutosRecentes />
                     </Suspense>
