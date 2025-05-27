@@ -11,7 +11,9 @@ export default function Page(props: { params: Promise<Params>, searchParams: Pro
         <div className="flex flex-wrap">
             <div className="md:w-1/3 lg:w-1/4 px-4  md:block">
                 <aside>
-                    <ProdutosPesquisa />
+                    <Suspense fallback={<LoadingRecentes />}>
+                        <ProdutosPesquisa />
+                    </Suspense>
                     <Suspense fallback={<LoadingRecentes />}>
                         <ProdutosRecentes />
                     </Suspense>
