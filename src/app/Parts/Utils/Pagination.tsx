@@ -14,7 +14,7 @@ export default async function PaginationElement({ params, countTotal, pageCurren
         rows.push(n);
     }
 
-    const preLink = (resolvedParams.slug) ? "/tag/" + params.slug + "/p/" : "/blog/p/";
+    const preLink = (resolvedParams.slug) ? "/tag/" + resolvedParams.slug + "/p/" : "/blog/p/";
     if (quantityPage > 1) {
         return (
             <Pagination className='text-blue-500 my-4'>
